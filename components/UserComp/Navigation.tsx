@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FiInstagram, FiFacebook, FiX } from "react-icons/fi";
 import { FaTiktok, FaPinterest } from "react-icons/fa";
-import {delay, motion} from "framer-motion"
+import {delay, easeIn, easeOut, motion} from "framer-motion"
 import Image from 'next/image';
 
 const Navigation = ({close}: {close: () => void}) => {
@@ -27,7 +27,7 @@ const Navigation = ({close}: {close: () => void}) => {
             x:0,
             transition: {
                 duration: 0.4,
-                ease: "easeOut"
+                ease: easeOut
             }
         },
         exit: {
@@ -35,7 +35,7 @@ const Navigation = ({close}: {close: () => void}) => {
             x: -420,
             transition: {
                 duration: 0.4,
-                ease: "easeIn"
+                ease: easeIn
             }
         },
     }
@@ -49,7 +49,7 @@ const Navigation = ({close}: {close: () => void}) => {
             x:0,
             transition: {
                 duration: 0.4,
-                ease: "easeOut",
+                ease: easeOut,
                 delay: 0.3
             }
         },
