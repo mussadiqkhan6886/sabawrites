@@ -10,7 +10,7 @@ const Velocity = () => {
         texts={[' LifeStyle ✦', ' Beauty ✦']} 
         className="custom-scroll-text"
         />
-      <Image src={"/bouquet.png"} alt='bouquet icon' width={100} height={100} className='rotate-12 absolute' />
+      <Image src={"/bouquet.png"} alt='bouquet icon' width={120} height={120} className='rotate-12 absolute' />
     </div>
   )
 }
