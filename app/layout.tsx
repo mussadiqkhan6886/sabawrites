@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { quicksand } from "@/lib/fonts/font";
+import Header from "@/components/UserComp/Header";
 
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body
         className={`${quicksand.className} antialiased`}
       >
+        <Header />
         {children}
       </body>
     </html>
