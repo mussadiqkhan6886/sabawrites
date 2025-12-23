@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import {FiMenu} from "react-icons/fi"
 import Navigation from './Navigation';
+import { AnimatePresence } from 'framer-motion';
 
 const Header = () => {
 
@@ -17,7 +18,9 @@ const Header = () => {
     <header>
       <div>
         <FiMenu onClick={() => setShowNavigation(true)} />
-        {showNavigation && <Navigation close={close} />}
+        <AnimatePresence>
+            {showNavigation && <Navigation close={close} />}
+        </AnimatePresence>
       </div>
 
       <Link href={"/"}>
