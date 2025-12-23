@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+@theme{
+  --color-main: #FD7979;
+  --color-medium: #FDACAC;
+  --color-light: #FEEAC9;
+  --color-dark: #B77566;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow-x: hidden;
+  background: var(--color-light);
+}
