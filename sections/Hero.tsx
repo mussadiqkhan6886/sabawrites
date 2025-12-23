@@ -17,6 +17,13 @@ const Hero = () => {
         className='w-full h-full object-cover rounded-xl'
       />
 
+      {/* stickers */}
+
+      <Image src={"/makeup.png"} alt='makeup icon' width={130} height={130} className='rotate-12 absolute top-1/2 left-[20%] -translate-y-1/2 z-30' />
+      <Image src={"/lipstick.png"} alt='makeup icon' width={130} height={130} className='rotate-12 absolute top-1/2 right-[20%] -translate-y-3/3 z-30' />
+
+      {/* stickers end */}
+
       <div className='sm:bg-light p-9 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100px] sm:-translate-y-1/2 max-w-2xl text-center rounded sm:shadow-lg w-full'>
         <h1 className={`${playfair.className} text-white sm:text-black font-semibold text-4xl mb-4`}>
           Inspiring Everyday Life & Style
