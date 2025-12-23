@@ -16,7 +16,7 @@ const Header = () => {
     }
 
   return (
-    <header className='border-b border-dark py-4 px-7 sm:px-10 cursor-pointer flex items-center justify-between'>
+    <header className='border-b fixed w-full top-0 border-dark py-4 px-5 sm:px-10 cursor-pointer flex items-center justify-between'>
       <div>
         <FiMenu className='text-dark text-2xl' onClick={() => setShowNavigation(true)} />
         <AnimatePresence>
@@ -25,10 +25,10 @@ const Header = () => {
       </div>
 
       <Link href={"/"}>
-        <h1 className={`${playfair.className} text-3xl sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h1>
+        <h1 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h1>
       </Link>
 
-      <button className={`${playfair.className} bg-dark text-light px-4 py-2 rounded-full cursor-pointer hover:bg-main transition`}>
+      <button className={`${playfair.className} bg-dark text-sm sm:text-base text-light px-4 py-2 rounded-full cursor-pointer hover:bg-main transition`}>
         Follow Me
       </button>
     </header>
