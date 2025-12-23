@@ -56,7 +56,7 @@ const Navigation = ({close}: {close: () => void}) => {
     }
 
   return (
-    <motion.nav variants={variant} initial={"hidden"} animate={"view"} exit={"exit"} className='w-[320px] sm:w-[400px] h-screen flex flex-col justify-between p-10 border-r border-dark bg-medium fixed top-0 z-50'>
+    <motion.nav variants={variant} initial={"hidden"} animate={"view"} exit={"exit"} className='w-[320px] sm:w-[400px] h-screen flex flex-col justify-between p-10 border-r border-dark bg-medium fixed left-0 top-0 z-50'>
         <FiX onClick={close} className='absolute right-5 top-5 cursor-pointer text-dark text-2xl ' />
       <ul className='flex flex-col mt-4 gap-4 mb-14'>
         {navItems.map(item => (
