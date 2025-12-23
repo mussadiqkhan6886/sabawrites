@@ -6,16 +6,9 @@ import { FiInstagram, FiFacebook, FiX } from "react-icons/fi";
 import { FaTiktok, FaPinterest } from "react-icons/fa";
 import {delay, easeIn, easeOut, motion} from "framer-motion"
 import Image from 'next/image';
+import { navItems } from '@/lib/constants';
 
 const Navigation = ({close}: {close: () => void}) => {
-
-    const navItems = [
-        {title: "Home", link: "/"},
-        {title: "Blogs", link: "/blogs"},
-        {title: "Categories", link: "/category"},
-        {title: "About", link: "/about-me"},
-        {title: "Contact", link: "/contact"},
-    ]
 
     const variant = {
         hidden: {
