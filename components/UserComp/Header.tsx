@@ -16,7 +16,7 @@ const Header = () => {
     }
 
   return (
-    <header className='border-b fixed w-full top-0 border-dark py-4 px-5 sm:px-10 cursor-pointer flex items-center justify-between'>
+    <header className='border-b  w-full top-0 border-dark py-4 px-5 sm:px-10 cursor-pointer flex items-center justify-between z-50'>
       <div>
         <FiMenu className='text-dark text-2xl' onClick={() => setShowNavigation(true)} />
         <AnimatePresence>
