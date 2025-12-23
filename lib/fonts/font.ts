@@ -13,7 +13,7 @@ export const dancing = Dancing_Script({
 })
 
 export const quicksand = Quicksand({
-    weight: ["300", "400", "500", "600", "700", "800"],
+    weight: ["300", "400", "500", "600", "700"],
     style: ["normal"],
     subsets: ["latin"]
 })
