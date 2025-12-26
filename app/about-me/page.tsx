@@ -4,15 +4,14 @@ import Image from "next/image";
 export default function About() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 relative">
-      
-       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full h-full " />
-      {/* Heading */}
-      <h1 className={`text-4xl ${playfair.className} font-bold mb-10 text-center`}>
+      <h1 className={`text-5xl uppercase absolute left-1/2 top-10 w-full -translate-x-1/2 ${playfair.className} font-bold mb-10 text-center`}>
         About Me
       </h1>
+  
+       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full h-[75vh] scale-110 object-cover object-bottom" />
 
       {/* Content */}
-      <div className="text-gray-700 leading-relaxed text-lg">
+      <div className={`${playfair.className} text-gray-700 mt-20 leading-relaxed text-lg`}>
 
         {/* Image */}
         <Image
@@ -40,11 +39,11 @@ export default function About() {
           of the time all of them).
         </p>
 
-        <p className="mt-4">
+        <p className="mt-3">
           During the day, I am a part-time content writer who mostly types words
           that (hopefully) have some sense, and during the night, I usually get
           overwhelmed with skincare + makeup reviews, Pinterest boards, and beauty
-          wishlists that I have totally lost control of. 😅
+          wishlists that I have totally lost control of. 
         </p>
 
         <p className="mt-4">
@@ -58,8 +57,8 @@ export default function About() {
         <p className="mt-4">
           At times, I think of myself as the present-day narrator of the
           Bridgerton series, only instead of indulging in the gossip of the royal
-          and the new society, I’m sharing the intel of the lip masks 💋,
-          highlighters ✨ and the moisturizers. 😌
+          and the new society, I’m sharing the intel of the lip masks,
+          highlighters and the moisturizers. 
         </p>
 
         <p className="mt-4">
@@ -78,11 +77,11 @@ export default function About() {
         <p className="mt-4">
           So, take your preferred drink, wear your coziest hoodie, and let us get
           into everything that has to do with glow-up, Amazon finds, and
-          self-love. 💕
+          self-love.
         </p>
 
         <p className="mt-4">
-          Actually, skincare and makeup 💄 should not be a drag, it should be a
+          Actually, skincare and makeup  should not be a drag, it should be a
           treat.
         </p>
 
