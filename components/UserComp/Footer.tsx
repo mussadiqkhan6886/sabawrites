@@ -1,5 +1,6 @@
 import { blogCategories } from "@/lib/constants";
 import { playfair } from "@/lib/fonts/font";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
@@ -10,8 +11,9 @@ export default function Footer() {
       <div className="absolute inset-0 w-full h-full bg-white/40" />
       <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {/* Brand */}
-        <div className="space-y-4 z-30">
+        <div className="space-y-4 z-30 relative">
           <h6 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h6>
+          <Image src={"/spin.svg"} alt="spin image footer" width={50} height={50} className="spinAnimation absolute -top-4 left-30 md:right-17" />
           <p className="text-black">
             A lifestyle & beauty blog celebrating elegance, wellness, and feminine energy.
           </p>
