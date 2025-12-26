@@ -64,7 +64,7 @@ const Latest = ({data}: {data: Blog[]}) => {
                 className="w-full h-[400px] object-cover rounded-lg"
               />
 
-            <div className='p-10'>
+            <div className='p-8 h-full bg-light/40 backdrop-blur-sm'>
                 <p className="text-sm text-gray-500 mt-3">
                     {blog.publishedAt}
                 </p>
@@ -73,7 +73,7 @@ const Latest = ({data}: {data: Blog[]}) => {
                     {blog.title}
                 </h3>
 
-                <p className="text-gray-600 mt-2">
+                <p className="text-gray-900 text-sm mt-2">
                     {blog.excerpt}
                 </p>
               </div>

@@ -30,7 +30,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
         {reverse ? (
           <>
             {/* Details First */}
-            <div className="p-5 order-1">
+            <div className="p-5 order-1 bg-light/40 backdrop-blur-sm">
               <span className="text-sm text-dark font-semibold">{category}</span>
               <h3 className={`${playfair.className} mt-2 text-xl font-light line-clamp-2`}>
                 {title}
@@ -48,7 +48,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
                 src={coverImage}
                 alt={title}
                 fill
-                className="object-cover md:group-hover:scale-105 transition-transform duration-500"
+                className="object-cover"
               />
             </div>
           </>
@@ -60,12 +60,12 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
                 src={coverImage}
                 alt={title}
                 fill
-                className="object-cover md:group-hover:scale-105 transition-transform duration-500"
+                className="object-cover"
               />
             </div>
 
             {/* Details Second */}
-            <div className="p-5 order-2">
+            <div className="p-5 order-2 bg-light/40 backdrop-blur-sm">
               <span className="text-sm text-dark font-semibold">{category}</span>
               <h3 className={`${playfair.className} mt-2 text-xl font-light line-clamp-2`}>
                 {title}

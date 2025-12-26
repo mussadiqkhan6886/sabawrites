@@ -29,7 +29,7 @@ const Featured = ({blogs}: {blogs: Blog[]}) => {
         </SwiperSlide>
       ))}
     </Swiper>
-    <div className="flex justify-center gap-4 mt-6">
+    <div className="flex z-40 justify-center gap-4 mt-6">
         <button
             id="prevNav"
             className="px-4 py-3 border border-dark text-dark rounded-full hover:bg-dark hover:text-white transition"

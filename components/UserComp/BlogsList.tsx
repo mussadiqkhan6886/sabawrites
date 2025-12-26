@@ -40,24 +40,26 @@ const BlogsList = ({ data }: { data: Blog[] }) => {
       >
         {data.map((item) => (
           <SwiperSlide key={item._id}>
-            <Link href={`/blogs/${item.slug}`} className="h-[300px] block">
+            <Link href={`/blogs/${item.slug}`} className="h-full block">
               <Image
               width={200}
               height={200}
                 src={item.coverImage}
                 alt={item.title}
-                className="h-53 w-full mb-7 object-cover"
+                className="h-53 w-full object-cover"
               />
 
-              <h3 className={`${playfair.className} mt-3 text-sm font-semibold line-clamp-2`}>
+              <div className=" bg-light/40 backdrop-blur-sm p-3">
+              <h3 className={`${playfair.className}  text-sm font-semibold line-clamp-2`}>
                 {item.title}
               </h3>
 
-              <p className="text-gray-700 text-[13px]">{item.excerpt.length >= 100 ? item.excerpt.slice(0,100) + "..." : item.excerpt}</p>
+              <p className="text-gray-700 text-[13px]">{item.excerpt.length >= 400 ? item.excerpt.slice(0,40) + "..." : item.excerpt}</p>
 
-              <p className="mt-1 text-xs text-gray-500">
+              <p className="my-2 text-xs text-gray-500">
                 {item.publishedAt}
               </p>
+              </div>
             </Link>
           </SwiperSlide>
         ))}

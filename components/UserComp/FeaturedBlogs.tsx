@@ -2,12 +2,13 @@ import React from 'react'
 import SectionTitle from './SectionTitle'
 import { blogs } from '@/lib/constants'
 import Featured from './Featured'
+import Image from 'next/image'
 
 const FeaturedBlogs = () => {
   return (
-    <section className='py-20'>
+    <section style={{backgroundImage: `URL(${"/flower-1.png"})`, backgroundPosition: "bottom right", backgroundSize:"contain", backgroundRepeat: "no-repeat"}} className='py-20 relative'>
       <SectionTitle title='Featured Stories' />
-      <div>
+      <div >
         <Featured blogs={blogs} />
       </div>
     </section>

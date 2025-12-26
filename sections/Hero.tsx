@@ -21,7 +21,7 @@ const Hero = () => {
 
       <div className='sm:bg-light p-9 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100px] sm:-translate-y-1/2 max-w-2xl text-center rounded sm:shadow-lg w-full'>
        <div className='relative '>
-        <Image src={"/makeup.png"} alt='makeup icon' width={130} height={130} className='rotate-12 absolute top-0 -left-20 z-30 hidden sm:block' />
+        <Image src={"/makeup.png"} alt='makeup icon' width={130} height={130} className='rotate-12 absolute top-0 -left-27 z-30 hidden sm:block' />
         <Image src={"/lipstick.png"} alt='makeup icon' width={130} height={130} className='rotate-12 absolute -top-22 -right-20 z-30 hidden sm:block' />
       </div>
 
