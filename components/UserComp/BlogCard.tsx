@@ -1,0 +1,40 @@
+import { playfair } from '@/lib/fonts/font'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+
+interface Props {
+    slug: string
+    coverImage: string
+    title: string
+    excerpt: string
+    publishedAt: string
+}
+
+const BlogCard = ({slug, coverImage, title, excerpt, publishedAt}: Props) => {
+  return (
+    <Link href={`/blogs/${slug}`} className="h-full block">
+        <Image
+        width={200}
+        height={200}
+        src={coverImage}
+        alt={title}
+        className="h-53 w-full object-cover"
+        />
+
+        <div className=" bg-light/40 backdrop-blur-sm p-3">
+        <h3 className={`${playfair.className}  text-sm font-semibold line-clamp-2`}>
+        {title}
+        </h3>
+
+        <p className="text-gray-900 text-[13px]">{excerpt.length >= 400 ? excerpt.slice(0,40) + "..." : excerpt}</p>
+
+        <p className="my-2 text-xs text-gray-500">
+        {publishedAt}
+        </p>
+        </div>
+    </Link>
+  )
+}
+
+export default BlogCard

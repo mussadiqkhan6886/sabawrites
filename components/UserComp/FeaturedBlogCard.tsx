@@ -35,7 +35,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
               <h3 className={`${playfair.className} mt-2 text-xl font-light line-clamp-2`}>
                 {title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm line-clamp-3">{excerpt}</p>
+              <p className="mt-2  text-sm line-clamp-3">{excerpt}</p>
               <div className="mt-4 text-xs text-gray-500 flex justify-between">
                 <span>{readTime}</span>
                 <span>{publishedAt}</span>
@@ -70,7 +70,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
               <h3 className={`${playfair.className} mt-2 text-xl font-light line-clamp-2`}>
                 {title}
               </h3>
-              <p className="mt-2 text-gray-600 text-sm line-clamp-3">{excerpt}</p>
+              <p className="mt-2  text-sm line-clamp-3">{excerpt}</p>
               <div className="mt-4 text-xs text-gray-500 flex justify-between">
                 <span>{readTime}</span>
                 <span>{publishedAt}</span>

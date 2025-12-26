@@ -73,7 +73,7 @@ const Latest = ({data}: {data: Blog[]}) => {
                     {blog.title}
                 </h3>
 
-                <p className="text-gray-900 text-sm mt-2">
+                <p className=" text-sm mt-2">
                     {blog.excerpt}
                 </p>
               </div>
