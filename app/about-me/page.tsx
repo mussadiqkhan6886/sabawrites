@@ -4,33 +4,16 @@ import Image from "next/image";
 export default function About() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 relative">
-      <h1 className={`text-5xl uppercase absolute left-1/2 top-10 w-full -translate-x-1/2 ${playfair.className} font-bold mb-10 text-center`}>
+      <h1 className={`text-5xl uppercase absolute left-1/2 top-10 w-full -translate-x-1/2 ${playfair.className} font-bold mb-10 text-center text-main`}>
         About Me
       </h1>
   
-       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full h-[75vh] scale-110 object-cover object-bottom" />
+       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full md:h-[75vh] scale-110 object-cover object-bottom" />
 
       {/* Content */}
       <div className={`${playfair.className} text-gray-700 mt-20 leading-relaxed text-lg`}>
 
-        {/* Image */}
-        <Image
-          src="/makeup-5.jpg" // change image path
-          alt="Saba"
-          width={360}
-          height={360}
-          className="
-            mb-6
-            w-full
-            object-cover object-left
-            lg:w-[600px]
-            lg:h-[600px]
-            lg:float-left
-            lg:mr-8
-            lg:mb-4
-          "
-        />
-
+       
         {/* Paragraphs */}
         <p>
           That’s me, the girl who on one hand easily spends hours watching skincare

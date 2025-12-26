@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Velocity = () => {
   return (
     <div className='relative'>
-      <Image src={"/icon.svg"} alt='icon' width={70} height={70} className='spinAnimation absolute -right-2 -top-13 z-10 hue-rotate-150' />
+      <Image src={"/icon.svg"} alt='icon' width={70} height={70} className='spinAnimation absolute right-4 -top-13 z-10 hue-rotate-150' />
         <ScrollVelocity
         texts={[' LifeStyle ✦', ' Beauty ✦']} 
         className="custom-scroll-text"
