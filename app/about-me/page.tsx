@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 relative">
       
-       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full h-full absolute -bottom-13" />
+       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full h-full " />
       {/* Heading */}
       <h1 className={`text-4xl ${playfair.className} font-bold mb-10 text-center`}>
         About Me
@@ -16,7 +16,7 @@ export default function About() {
 
         {/* Image */}
         <Image
-          src="/makeup-3.jpg" // change image path
+          src="/makeup-5.jpg" // change image path
           alt="Saba"
           width={360}
           height={360}

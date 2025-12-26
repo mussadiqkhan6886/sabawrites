@@ -34,7 +34,7 @@ const Latest = ({data}: {data: Blog[]}) => {
     ).slice(0,4);
 
   return (
-    <div className="relative px-2 sm:px-10">
+    <div className="relative px-0 sm:px-10">
       <Swiper
         modules={[Navigation, Autoplay]}
         autoplay={{
@@ -55,7 +55,7 @@ const Latest = ({data}: {data: Blog[]}) => {
       >
         {latestUniqueBlogs.map((blog, index) => (
           <SwiperSlide key={blog._id}>
-            <Link href={`/blogs/${blog.slug}`} className="relative hover:scale-95 duration-500 transition ease-in-out h-[92vh] flex border border-dark flex-col">
+            <Link href={`/blogs/${blog.slug}`} className="relative hover:scale-95 duration-500 transition ease-in-out xl:h-[92vh] flex border border-dark flex-col">
 
               <Image
                 width={400} height={400}
