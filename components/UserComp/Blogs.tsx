@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Blogs = () => {
   return (
-    <section className='py-10 max-w-7xl mx-auto relative'>
+    <section className='py-10 overflow-x-hidden max-w-7xl mx-auto relative'>
       <SectionTitle title='Blogs' />
       <div>
         <BlogsList data={blogs} />
