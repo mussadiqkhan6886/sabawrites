@@ -19,11 +19,11 @@ const BlogCard = ({slug, coverImage, title, excerpt, publishedAt}: Props) => {
         height={200}
         src={coverImage}
         alt={title}
-        className="h-53 w-full object-cover"
+        className="h-[250px] w-full object-cover"
         />
 
         <div className=" bg-light/40 backdrop-blur-sm p-3">
-        <h3 className={`${playfair.className}  text-sm font-semibold line-clamp-2`}>
+        <h3 className={`${playfair.className}  text-lg font-semibold line-clamp-2`}>
         {title}
         </h3>
 

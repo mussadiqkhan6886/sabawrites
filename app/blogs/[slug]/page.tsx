@@ -40,8 +40,8 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
       </div>
       <hr />
       <div className='max-w-7xl mx-auto'>
-        <h2 className={`${playfair.className} text-center text-2xl sm:text-3xl py-5`}>More Related Stores About {blog.category}</h2>
-        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
+        <h2 className={`${playfair.className} text-center text-2xl sm:text-3xl py-10`}>More Related Stories About {blog.category}</h2>
+        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4'>
           {more.slice(0,5).map(item => (
             <BlogCard key={item._id} {...item} />
           ))}

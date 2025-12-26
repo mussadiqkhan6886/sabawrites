@@ -31,11 +31,8 @@ const BlogsList = ({ data }: { data: Blog[] }) => {
           640: {
             slidesPerView: 3,
           },
-          768: {
-            slidesPerView: 4,
-          },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 4,
           },
         }}
       >
