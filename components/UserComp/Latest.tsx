@@ -34,7 +34,7 @@ const Latest = ({data}: {data: Blog[]}) => {
     ).slice(0,4);
 
   return (
-    <div className="relative px-10">
+    <div className="relative px-2 sm:px-10">
       <Swiper
         modules={[Navigation, Autoplay]}
         autoplay={{

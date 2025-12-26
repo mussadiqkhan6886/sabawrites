@@ -9,7 +9,7 @@ const Gallery = () => {
       <h3 className={`${playfair.className} text-3xl sm:text-5xl mb-10 font-semibold text-center`}>Gallery</h3>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {galleryImages.map(img => (
-            <Image src={img.src} alt={img.alt} key={img.id} width={400} height={400} />
+            <Image src={img.src} alt={img.alt} key={img.id} width={400} height={400} className='w-full h-full' />
         ))}
       </div>
     </section>
