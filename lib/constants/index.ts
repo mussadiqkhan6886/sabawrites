@@ -183,3 +183,18 @@ export const blogCategories = [
   },
 ];
 
+export const galleryImages = [
+  { id: 1, src: "https://picsum.photos/seed/gallery1/400/300", alt: "Gallery image 1" },
+  { id: 2, src: "https://picsum.photos/seed/gallery2/400/300", alt: "Gallery image 2" },
+  { id: 3, src: "https://picsum.photos/seed/gallery3/400/300", alt: "Gallery image 3" },
+  { id: 4, src: "https://picsum.photos/seed/gallery4/400/300", alt: "Gallery image 4" },
+  { id: 5, src: "https://picsum.photos/seed/gallery5/400/300", alt: "Gallery image 5" },
+  { id: 6, src: "https://picsum.photos/seed/gallery6/400/300", alt: "Gallery image 6" },
+  { id: 7, src: "https://picsum.photos/seed/gallery7/400/300", alt: "Gallery image 7" },
+  { id: 8, src: "https://picsum.photos/seed/gallery8/400/300", alt: "Gallery image 8" },
+  { id: 9, src: "https://picsum.photos/seed/gallery9/400/300", alt: "Gallery image 9" },
+  { id: 10, src: "https://picsum.photos/seed/gallery10/400/300", alt: "Gallery image 10" },
+  { id: 11, src: "https://picsum.photos/seed/gallery11/400/300", alt: "Gallery image 11" },
+  { id: 12, src: "https://picsum.photos/seed/gallery12/400/300", alt: "Gallery image 12" },
+];
+
