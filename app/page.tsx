@@ -1,4 +1,5 @@
 import Blogs from '@/components/UserComp/Blogs'
+import { Categories } from '@/components/UserComp/Categories'
 import FeaturedBlogs from '@/components/UserComp/FeaturedBlogs'
 import LatestPosts from '@/components/UserComp/LatestPosts'
 import Velocity from '@/components/UserComp/Velocity'
@@ -13,6 +14,7 @@ const Home = () => {
       <FeaturedBlogs />
       <LatestPosts />
       <Blogs />
+      <Categories />
     </main>
   )
 }

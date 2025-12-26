@@ -15,14 +15,11 @@ const BlogsList = ({ data }: { data: Blog[] }) => {
   return (
     <div className="w-full">
       <Swiper
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay]}
         loop={true}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
         }}
         spaceBetween={20}
         slidesPerView={1}

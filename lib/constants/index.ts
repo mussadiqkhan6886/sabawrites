@@ -125,3 +125,61 @@ export const blogs = [
     featured: true,
   },
 ];
+
+export const blogCategories = [
+  {
+    id: "lifestyle",
+    name: "Lifestyle",
+    link: "/category/lifestyle",
+    image: "https://picsum.photos/seed/lifestyle/200/200",
+  },
+  {
+    id: "wellness",
+    name: "Wellness & Self-Care",
+    link: "/category/wellness",
+    image: "https://picsum.photos/seed/wellness/200/200",
+  },
+  {
+    id: "beauty",
+    name: "Beauty",
+    link: "/category/beauty",
+    image: "https://picsum.photos/seed/beauty/200/200",
+  },
+  {
+    id: "makeup",
+    name: "Makeup",
+    link: "/category/makeup",
+    image: "https://picsum.photos/seed/makeup/200/200",
+  },
+  {
+    id: "skincare",
+    name: "Skincare",
+    link: "/category/skincare",
+    image: "https://picsum.photos/seed/skincare/200/200",
+  },
+  {
+    id: "fashion",
+    name: "Fashion",
+    link: "/category/fashion",
+    image: "https://picsum.photos/seed/fashion/200/200",
+  },
+  {
+    id: "trends",
+    name: "Trends",
+    link: "/category/trends",
+    image: "https://picsum.photos/seed/trends/200/200",
+  },
+  {
+    id: "home-decor",
+    name: "Home & Decor",
+    link: "/category/home-decor",
+    image: "https://picsum.photos/seed/home-decor/200/200",
+  },
+  {
+    id: "floral-aesthetics",
+    name: "Floral Aesthetics",
+    link: "/category/floral-aesthetics",
+    image: "https://picsum.photos/seed/floral-aesthetics/200/200",
+  },
+];
+
