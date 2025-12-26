@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { quicksand } from "@/lib/fonts/font";
 import Header from "@/components/UserComp/Header";
+import Footer from "@/components/UserComp/Footer";
 
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
