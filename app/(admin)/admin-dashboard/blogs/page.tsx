@@ -14,16 +14,16 @@ const BlogsPage = () => {
   const [loading, setLoading] = useState(true);
   const [deletingBlogId, setDeletingBlogId] = useState<string | null>(null);
 
- const deleteBlog = async (id: string) => {
+ const deleteBlog = async (slug: string) => {
     if (!confirm("Are you sure you want to delete this blog?")) return;
 
     try {
-        setDeletingBlogId(id);
-        const res = await fetch(`/api/blogs/${id}`, { method: "DELETE" });
+        setDeletingBlogId(slug);
+        const res = await fetch(`/api/blogs/${slug}`, { method: "DELETE" });
         if (!res.ok) throw new Error("Error deleting blog");
 
         // Remove deleted blog from state
-        setBlogs((prev) => prev.filter((blog) => blog._id !== id));
+        setBlogs((prev) => prev.filter((blog) => blog.slug !== slug));
     } catch (err) {
         console.error(err);
         alert("Failed to delete blog");
@@ -95,7 +95,7 @@ const BlogsPage = () => {
                     <FaTrash
                     color="red"
                     className="cursor-pointer"
-                    onClick={() => deleteBlog(blog._id)}
+                    onClick={() => deleteBlog(blog.slug)}
                     />
                 )}
                 </button>
