@@ -1,24 +1,13 @@
 import { NextResponse } from "next/server";
 import { connectDB } from "@/lib/database";
 import BlogSchema from "@/lib/schema/BlogSchema";
-
-// Type for incoming blog request
-interface BlogRequest {
-  title: string;
-  slug: string;
-  excerpt: string;
-  coverImage: string;
-  category: string;
-  readTime: string;
-  featured: boolean;
-  content: string;
-}
+import { Blog } from "@/type";
 
 export async function POST(req: Request) {
   try {
     await connectDB();
 
-    const body: BlogRequest = await req.json();
+    const body: Blog = await req.json();
 
     // Optional: simple validation
     if (!body.title || !body.content) {

@@ -8,10 +8,9 @@ interface Props {
     coverImage: string
     title: string
     excerpt: string
-    publishedAt: string
 }
 
-const BlogCard = ({slug, coverImage, title, excerpt, publishedAt}: Props) => {
+const BlogCard = ({slug, coverImage, title, excerpt}: Props) => {
   return (
     <Link href={`/blogs/${slug}`} className="h-full block">
         <Image
