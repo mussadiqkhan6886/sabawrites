@@ -24,6 +24,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
   readTime,
   reverse = false,
 }) => {
+  const publish = new Date(publishedAt).toLocaleDateString()
   return (
     <Link href={`/blogs/${slug}`} className="block group px-2 sm:px-0 h-125">
       <div className="overflow-hidden sm:border-r sm:px-2 md:px-10 border-main transition duration-500  flex flex-col">
@@ -37,8 +38,8 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
               </h3>
               <p className="mt-2  text-sm line-clamp-3">{excerpt}</p>
               <div className="mt-4 text-xs text-gray-500 flex justify-between">
-                <span>{readTime}</span>
-                <span>{publishedAt}</span>
+                <span>Read Time: {readTime}</span>
+                <span>{publish}</span>
               </div>
             </div>
 
@@ -72,8 +73,8 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
               </h3>
               <p className="mt-2  text-sm line-clamp-3">{excerpt}</p>
               <div className="mt-4 text-xs text-gray-500 flex justify-between">
-                <span>{readTime}</span>
-                <span>{publishedAt}</span>
+                <span>Read Time: {readTime}</span>
+                <span>{publish}</span>
               </div>
             </div>
           </>

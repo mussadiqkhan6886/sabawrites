@@ -61,6 +61,10 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     setBlog({ ...blog, coverImage: "" });
   };
 
+  useEffect(() => {
+    setBlog({...blog, slug: blog.title!?.toLowerCase().replace(/\s+/g, "-")})
+  }, [blog.slug, blog.title])
+
   const handleSave = async () => {
     try {
       setSaving(true);
