@@ -58,6 +58,13 @@ export default function BlogEditor() {
         return;
       }
       alert("Blog saved successfully!");
+      setTitle("")
+      setExcerpt("")
+      setCoverImage(null)
+      setCategory("")
+      setReadTime("")
+      setFeatured(false)
+      setContent("")
     } catch (err) {
       console.error(err);
       alert("Something went wrong");

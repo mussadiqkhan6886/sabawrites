@@ -65,8 +65,8 @@ const BlogsPage = () => {
       const publishedAt = new Date(blog.createdAt).toLocaleDateString()
       return (
 
-        <div>
-            <Link key={blog._id} href={`/admin-dashboard/blogs/${blog.slug}`} className="h-full block">
+        <div key={blog._id}>
+            <Link href={`/admin-dashboard/blogs/${blog.slug}`} className="h-full block">
                 <Image
                     width={200}
                     height={200}
@@ -80,7 +80,7 @@ const BlogsPage = () => {
                     {blog.title}
                     </h3>
 
-                    <p className="text-gray-900 text-[13px] mt-2 text-center">{blog.excerpt.length >= 400 ? blog.excerpt.slice(0,40) + "..." : blog.excerpt}</p>
+                    <p className="text-gray-900 text-[13px] mt-2 text-center">{blog.excerpt.length >= 100 ? blog.excerpt.slice(0,40) + "..." : blog.excerpt}</p>
 
                 </div>
             </Link>
