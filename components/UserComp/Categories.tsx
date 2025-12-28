@@ -17,7 +17,7 @@ export function Categories() {
         direction="left"
         speed="slow"
       /> */}
-      <div className="flex justify-center items-center gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-5">
         <div className="relative">
           <h4 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-2xl bg-medium/80 w-full text-center py-4">Beauty</h4>
           <Image src={"/makeup-7.jpg"} alt="makeup" width={400} height={400} />
