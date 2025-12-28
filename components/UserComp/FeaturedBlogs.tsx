@@ -6,8 +6,8 @@ import Image from 'next/image'
 
 const FeaturedBlogs = () => {
   return (
-    <section style={{backgroundImage: `URL(${"/flower-1.png"})`, backgroundPosition: "bottom right", backgroundSize:"contain", backgroundRepeat: "no-repeat"}} className='py-20 relative'>
-      <SectionTitle title='Featured Stories' />
+    <section  className='py-20 relative'>
+      <SectionTitle firstWord='Featured' secondWord='Stories' />
       <div >
         <Featured blogs={blogs} />
       </div>

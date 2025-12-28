@@ -7,8 +7,8 @@ const Quote = () => {
   return (
     <section className='py-10 max-w-6xl relative mx-auto h-[90vh]'>
       {/* stickers */}
-        <Image src={"/girl-power (1).png"} alt='girl power one sticker' width={100} height={100} className='absolute left-0 -top-5' />
-        <Image src={"/girl-power.png"} alt='girl power two sticker' width={100} height={100} className='absolute right-0 bottom-0' />
+        {/* <Image src={"/girl-power (1).png"} alt='girl power one sticker' width={100} height={100} className='absolute left-0 -top-5' />
+        <Image src={"/girl-power.png"} alt='girl power two sticker' width={100} height={100} className='absolute right-0 bottom-0' /> */}
       {/* end */}
         <div className='absolute w-[52%] top-[45%] sm:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-10'>
           <FaQuoteLeft className='text-center w-full text-4xl mb-10' />

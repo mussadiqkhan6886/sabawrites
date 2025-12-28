@@ -6,8 +6,8 @@ import { blogs } from '@/lib/constants'
 const LatestPosts = () => {
 
   return (
-    <section style={{backgroundImage: `URL(${"/flower-2.png"})`, backgroundPosition: "calc(100% - 100% - 90px) calc(100% + 80px)", backgroundSize:"contain", backgroundRepeat: "no-repeat"}} className='py-10 max-w-[1380px] mx-auto'>
-      <SectionTitle title='Latest Stories' />
+    <section className='py-10 max-w-[1380px] mx-auto'>
+      <SectionTitle firstWord='Latest' secondWord='Stories' />
       <div className='mx-3 lg:mx-10'>
         <Latest data={blogs} />
       </div>

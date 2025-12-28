@@ -19,19 +19,19 @@ const BlogCard = ({slug, coverImage, title, excerpt, publishedAt}: Props) => {
         height={200}
         src={coverImage}
         alt={title}
-        className="h-[250px] w-full object-cover"
+        className="h-[400px] w-full object-cover"
         />
 
         <div className=" bg-light/40 backdrop-blur-sm p-3">
-        <h3 className={`${playfair.className}  text-lg font-semibold line-clamp-2`}>
+        <h3 className={`${playfair.className} text-center  text-2xl font-light line-clamp-2`}>
         {title}
         </h3>
 
-        <p className="text-gray-900 text-[13px]">{excerpt.length >= 400 ? excerpt.slice(0,40) + "..." : excerpt}</p>
+        <p className="text-gray-900 text-[13px] mt-4 text-center">{excerpt.length >= 400 ? excerpt.slice(0,40) + "..." : excerpt}</p>
 
-        <p className="my-2 text-xs text-gray-500">
+        {/* <p className="my-2 text-xs text-gray-500">
         {publishedAt}
-        </p>
+        </p> */}
         </div>
     </Link>
   )

@@ -50,20 +50,20 @@ const Navigation = ({close}: {close: () => void}) => {
 
   return (
     <motion.nav variants={variant} initial={"hidden"} animate={"view"} exit={"exit"} className='w-[320px] sm:w-[400px] h-dvh flex flex-col justify-between p-10 border-r border-dark bg-medium fixed left-0 top-0 z-50'>
-        <FiX onClick={close} className='fixed right-5 top-5 cursor-pointer text-dark text-2xl ' />
+        <FiX onClick={close} className='absolute right-5 top-5 cursor-pointer text-black z-10 text-2xl ' />
       <ul className='flex flex-col mt-4 gap-4 mb-14'>
         {navItems.map(item => (
             <li onClick={close} className='text-lg tracking-wider hover:text-dark hover:scale-110 transition hover:shadow-2xl py-1 hover:font-semibold' key={item.title}><Link href={item.link}>{item.title}</Link></li>
         ))}
       </ul>
-      <motion.div className='absolute -right-18 bottom-30' variants={variant2} initial={"hidden"} animate={"view"}>
+      {/* <motion.div className='absolute -right-18 bottom-30' variants={variant2} initial={"hidden"} animate={"view"}>
         <Image src={"/spin.svg"} alt='flower image animation' width={150} height={150} className='spinAnimation ' />
-      </motion.div>
+      </motion.div> */}
       <div className='flex justify-between items-center mb-6 sm:px-5'>
-        <Link onClick={close} href="#"><FiInstagram className="text-2xl text-dark hover:text-main" /></Link>
-        <Link onClick={close} href="#"><FaTiktok className="text-2xl text-dark hover:text-main" /></Link>
-        <Link onClick={close} href="#"><FiFacebook className="text-2xl text-dark hover:text-main" /></Link>
-        <Link onClick={close} href="#"><FaPinterest className="text-2xl text-dark hover:text-main" /></Link>
+        <Link onClick={close} href="#"><FiInstagram className="text-2xl text-black" /></Link>
+        <Link onClick={close} href="#"><FaTiktok className="text-2xl text-black" /></Link>
+        <Link onClick={close} href="#"><FiFacebook className="text-2xl text-black" /></Link>
+        <Link onClick={close} href="#"><FaPinterest className="text-2xl text-black" /></Link>
       </div>
     </motion.nav>
   )

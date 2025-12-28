@@ -9,17 +9,17 @@ export default function Footer() {
   return (
     <footer style={{backgroundImage: `URL(${"/footer.jpg"})`, backgroundPosition: "bottom", backgroundSize:"cover"}} className="text-gray-800  mt-12 relative">
       <div className="absolute inset-0 w-full h-full bg-white/40" />
-      <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2  gap-8">
         {/* Brand */}
         <div className="space-y-4 z-30 relative">
           <h6 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h6>
-          <Image src={"/spin.svg"} alt="spin image footer" width={50} height={50} className="spinAnimation absolute -top-4 left-30 md:right-17" />
+          {/* <Image src={"/spin.svg"} alt="spin image footer" width={50} height={50} className="spinAnimation absolute -top-4 left-30 md:right-17" /> */}
           <p className="text-black">
             A lifestyle & beauty blog celebrating elegance, wellness, and feminine energy.
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Quick Links
         <div className="md:ml-10 z-30">
           <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-black">
@@ -28,9 +28,9 @@ export default function Footer() {
             <li><a href="/contact" className="hover:text-pink-500 transition">Contact</a></li>
             <li><a href="/blog" className="hover:text-pink-500 transition">Blog</a></li>
           </ul>
-        </div>
+        </div> */}
 
-        {/* Categories */}
+        {/* Categories
         <div className="z-30">
           <h3 className="text-lg font-semibold mb-4">Categories</h3>
           <ul className="space-y-2 text-black">
@@ -40,7 +40,7 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
           <div className="flex flex-col space-y-3 mt-2 z-30">
             <h3 className="text-lg font-semibold mb-4">Social Links</h3>
@@ -52,7 +52,7 @@ export default function Footer() {
           </div>
       </div>
 
-      <div className="border-t border-gray-300 mt-8 py-4 text-center text-dark text-sm">
+      <div className="border-t border-gray-300 mt-8 py-4 text-center text-black text-sm">
         &copy; {new Date().getFullYear()} saba writes. All rights reserved.
       </div>
     </footer>
