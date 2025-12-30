@@ -1,16 +1,28 @@
 import BlogCard from '@/components/UserComp/BlogCard'
 import { blogs } from '@/lib/constants'
+import { connectDB } from '@/lib/database'
 import { dancing } from '@/lib/fonts/font'
+import BlogSchema from '@/lib/schema/BlogSchema'
+import CategorySchema from '@/lib/schema/CategorySchema'
+import { Blog } from '@/type'
 import Image from 'next/image'
 import React from 'react'
 
 const page = async ({params}: {params: Promise<{category: string}>}) => {
 
+  await connectDB()
+
   const {category} = await params
 
-  const categoryBasedBlogs = blogs.filter(blog => blog.category.toLowerCase() === category)
+  const res = await BlogSchema.find({}).lean().populate("category", "name")
 
-  if(!categoryBasedBlogs){
+  const blogs = JSON.parse(JSON.stringify(res))
+
+  const categoryBasedBlogs = blogs.filter(
+  (blog: Blog) => blog.category?.name.toLowerCase() === category.toLowerCase()
+)
+
+  if(categoryBasedBlogs.length === 0){
     return (<main>
       <h1>NO CATEGORY AVAILABLE</h1>
     </main>)
@@ -22,7 +34,7 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
       <Image src={"/spin.svg"} alt='spinner image flower' width={60} height={60} className='spinAnimation absolute left-[55%] -translate-x-1/2' />
       <h1 className={`${dancing.className} text-3xl md:text-5xl text-center py-10 capitalize`}>{category}</h1>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
-        {categoryBasedBlogs.map(blog => (
+        {categoryBasedBlogs.map((blog: Blog) => (
           <BlogCard key={blog._id} {...blog} />
         ))}
       </div>

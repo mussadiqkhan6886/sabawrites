@@ -8,7 +8,10 @@ export interface Blog {
   slug: string;
   excerpt: string;
   coverImage: string;
-  category: string;
+  category: {
+    _id: string
+    name: string
+  };
   readTime: string;
   featured: boolean;
   content: string;

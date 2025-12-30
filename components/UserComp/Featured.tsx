@@ -25,7 +25,7 @@ const Featured = ({blogs}: {blogs: Blog[]}) => {
     >
       {blogs.filter(post => post.featured === true).map((blog: Blog, index: number) => (
         <SwiperSlide key={blog._id}>
-            <FeaturedBlogCard key={blog._id} title={blog.title} slug={blog.slug} excerpt={blog.excerpt} coverImage={blog.coverImage} category={blog.category} publishedAt={blog.createdAt} readTime={blog.readTime} reverse={index % 2 === 1}   />
+            <FeaturedBlogCard key={blog._id} title={blog.title} slug={blog.slug} excerpt={blog.excerpt} coverImage={blog.coverImage} category={blog.category.name} publishedAt={blog.createdAt} readTime={blog.readTime} reverse={index % 2 === 1}   />
         </SwiperSlide>
       ))}
     </Swiper>

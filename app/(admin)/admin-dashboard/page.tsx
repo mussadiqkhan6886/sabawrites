@@ -101,8 +101,8 @@ export default function BlogEditor() {
         onChange={(e) => setExcerpt(e.target.value)}
       />
 
-      <div className="flex flex-col space-y-2">
-        <label >
+      <div className="flex flex-col  space-y-2">
+        <label className="border p-3" >
           <span className="font-semibold">Cover Image: </span>
           <input
             type="file"

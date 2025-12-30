@@ -5,12 +5,13 @@ import { playfair } from "@/lib/fonts/font";
 import BlogCard from "@/components/UserComp/BlogCard";
 import { connectDB } from "@/lib/database";
 import BlogSchema from "@/lib/schema/BlogSchema";
+import { Blog } from "@/type";
 
 const Blogs = async () => {
 
   await connectDB()
 
-  const res = await BlogSchema.find().lean()
+  const res = await BlogSchema.find().lean().populate("category", "name")
 
   const data = JSON.parse(JSON.stringify(res))
 
@@ -30,7 +31,7 @@ const Blogs = async () => {
       </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 z-10">
-        {data.map((blog) => (
+        {data.map((blog: Blog) => (
           <BlogCard key={blog._id} {...blog} />
         ))}
       </div>

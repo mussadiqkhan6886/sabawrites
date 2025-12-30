@@ -110,16 +110,26 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
         />
       </div>
 
-      <div>
+      {/* <div>
         <label className="block font-semibold mb-1">Category</label>
-        <input
-          type="text"
-          placeholder="Category"
-          value={blog.category || ""}
-          onChange={(e) => setBlog({ ...blog, category: e.target.value })}
+
+        <select
+          value={blog.category?._id || ""}
+          onChange={(e) =>
+            setBlog({ ...blog, category: e.target.value })
+          }
           className="w-full border p-3"
-        />
-      </div>
+        >
+          <option value="">Select category</option>
+
+          {categories.map((cat) => (
+            <option key={cat._id} value={cat._id}>
+              {cat.name}
+            </option>
+          ))}
+        </select>
+      </div> */}
+
 
       <div>
         <label className="block font-semibold mb-1">Read Time</label>
