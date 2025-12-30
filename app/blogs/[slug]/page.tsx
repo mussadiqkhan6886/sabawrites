@@ -49,7 +49,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <Image src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='w-full object-center object-cover h-full' />
       </div>
 
-      <div className='prose max-w-7xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
+      <div className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
         
       </div>
 

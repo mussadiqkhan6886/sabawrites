@@ -53,7 +53,7 @@ const Navigation = ({close}: {close: () => void}) => {
         <FiX onClick={close} className='absolute right-5 top-5 cursor-pointer text-black z-10 text-2xl ' />
       <ul className='flex flex-col mt-4 gap-4 mb-14'>
         {navItems.map(item => (
-            <li onClick={close} className='text-lg tracking-wider hover:text-dark hover:scale-110 transition hover:shadow-2xl py-1 hover:font-semibold' key={item.title}><Link href={item.link}>{item.title}</Link></li>
+            <li style={{listStyle: "none"}} onClick={close} className='text-lg tracking-wider hover:text-dark hover:scale-110 transition hover:shadow-2xl py-1 hover:font-semibold' key={item.title}><Link href={item.link}>{item.title}</Link></li>
         ))}
       </ul>
       {/* <motion.div className='absolute -right-18 bottom-30' variants={variant2} initial={"hidden"} animate={"view"}>

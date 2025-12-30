@@ -1,11 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { blogs } from "@/lib/constants";
 import { playfair } from "@/lib/fonts/font";
 import BlogCard from "@/components/UserComp/BlogCard";
+import { connectDB } from "@/lib/database";
+import BlogSchema from "@/lib/schema/BlogSchema";
 
-const Blogs = () => {
+const Blogs = async () => {
+
+  await connectDB()
+
+  const res = await BlogSchema.find().lean()
+
+  const data = JSON.parse(JSON.stringify(res))
+
+  console.log(data)
+
   return (
     <section className="max-w-7xl mx-auto px-4 py-16">
       
@@ -20,7 +30,7 @@ const Blogs = () => {
       </div>
 
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 z-10">
-        {blogs.map((blog) => (
+        {data.map((blog) => (
           <BlogCard key={blog._id} {...blog} />
         ))}
       </div>
