@@ -5,6 +5,7 @@ import Image from "next/image";
 import { connectDB } from "@/lib/database";
 import CategorySchema from "@/lib/schema/CategorySchema";
 import { Category } from "@/type";
+import Link from "next/link";
 
 const Categories = async () => {
 
@@ -29,10 +30,10 @@ const Categories = async () => {
       /> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-5">
         {categories.map((category: Category) => (
-          <div key={category._id} className="relative">
+          <Link href={`/category/${category.slug}`} key={category._id} className="relative block">
             <h4 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase text-2xl bg-medium/80 w-full text-center py-4">{category.name}</h4>
             <Image src={category.image} alt={category.name} width={400} height={400} className="h-full w-full" />
-          </div>
+          </Link>
         ))}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Categories } from '@/components/UserComp/Categories'
+import Categories from '@/components/UserComp/Categories'
 import React from 'react'
 
 const Category = () => {

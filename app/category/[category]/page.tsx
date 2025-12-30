@@ -16,7 +16,6 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
     </main>)
   }
 
-  console.log(categoryBasedBlogs)
 
   return (
     <main className='max-w-7xl mx-auto'>
