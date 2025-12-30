@@ -26,7 +26,7 @@ const BlogCard = ({slug, coverImage, title, excerpt}: Props) => {
         {title}
         </h3>
 
-        <p className="text-gray-900 text-[13px] mt-4 text-center">{excerpt.length >= 400 ? excerpt.slice(0,40) + "..." : excerpt}</p>
+        <p className="text-gray-900 text-[13px] mt-4 text-center">{excerpt.length >= 100 ? excerpt.slice(0,100) + "..." : excerpt}</p>
 
         {/* <p className="my-2 text-xs text-gray-500">
         {publishedAt}

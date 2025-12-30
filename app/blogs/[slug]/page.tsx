@@ -35,8 +35,8 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
   return (
     <main>
-      <div className='flex flex-col-reverse lg:flex-row bg-medium lg:h-screen pb-20'>
-        <div className='w-full p-20 pb-0 flex justify-between flex-col'>
+      <div className='flex flex-col-reverse lg:flex-row bg-medium lg:h-screen '>
+        <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
             <p className='font-semibold text-sm'>{blog.category}</p>
             <h1 className={`${playfair.className} text-5xl lg:text-6xl `}>{blog.title}</h1>

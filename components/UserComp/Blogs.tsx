@@ -3,13 +3,22 @@ import SectionTitle from './SectionTitle'
 import BlogsList from './BlogsList'
 import { blogs } from '@/lib/constants'
 import Image from 'next/image'
+import { connectDB } from '@/lib/database'
+import BlogSchema from '@/lib/schema/BlogSchema'
 
-const Blogs = () => {
+const Blogs = async () => {
+
+  await connectDB()
+
+  const res = await BlogSchema.find({}).limit(10).lean()
+
+  const data = JSON.parse(JSON.stringify(res)) 
+
   return (
     <section className='py-10 px-3 overflow-x-hidden max-w-7xl mx-auto relative bg-medium/30'>
       <SectionTitle firstWord='Blogs' secondWord='Stories' />
       <div>
-        <BlogsList data={blogs} />
+        <BlogsList data={data} />
       </div>
         {/* <Image
         width={1000}

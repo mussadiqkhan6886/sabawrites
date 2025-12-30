@@ -2,10 +2,20 @@ import { blogCategories } from "@/lib/constants";
 import { InfiniteMovingCards } from "./ui/InfiniteMovingCollections";
 import SectionTitle from "./SectionTitle";
 import Image from "next/image";
+import { connectDB } from "@/lib/database";
+import CategorySchema from "@/lib/schema/CategorySchema";
+import { Category } from "@/type";
 
-export function Categories() {
+const Categories = async () => {
+
+  await connectDB()
+
+  const res = await CategorySchema.find({isActive: true}).lean()
+
+  const categories = JSON.parse(JSON.stringify(res))
+
   return (
-    <div className="rounded-md flex pt-10 flex-col antialiased bg-white items-center justify-center relative overflow-hidden">
+    <div className="rounded-md flex pt-10 flex-col antialiased bg-white items-center justify-center relative overflow-hidden max-w-7xl mx-auto">
         <SectionTitle firstWord="Categories" secondWord="Blogs" />
       {/* <InfiniteMovingCards
         items={blogCategories.slice(0, 5)}
@@ -18,21 +28,16 @@ export function Categories() {
         speed="slow"
       /> */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-5">
-        <div className="relative">
-          <h4 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-2xl bg-medium/80 w-full text-center py-4">Beauty</h4>
-          <Image src={"/makeup-7.jpg"} alt="makeup" width={400} height={400} />
-        </div>
-        <div className="relative">
-          <h4 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-2xl bg-medium/80 w-full text-center py-4">LifeStyle</h4>
-          <Image src={"/makeup-7.jpg"} alt="makeup" width={400} height={400} />
-        </div>
-        <div className="relative">
-          <h4 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-2xl bg-medium/80 w-full text-center py-4">Clothes</h4>
-          <Image src={"/makeup-7.jpg"} alt="makeup" width={400} height={400} />
-        </div>
+        {categories.map((category: Category) => (
+          <div key={category._id} className="relative">
+            <h4 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 uppercase text-2xl bg-medium/80 w-full text-center py-4">{category.name}</h4>
+            <Image src={category.image} alt={category.name} width={400} height={400} className="h-full w-full" />
+          </div>
+        ))}
       </div>
     </div>
   );
 }
 
 
+export default Categories

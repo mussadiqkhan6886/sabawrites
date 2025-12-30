@@ -7,7 +7,7 @@ import Navigation from './Navigation';
 import { AnimatePresence } from 'framer-motion';
 import { dancing, playfair } from '@/lib/fonts/font';
 import { usePathname } from 'next/navigation';
-import { FaPlusCircle, FaBlog, FaFile, FaHome } from 'react-icons/fa';
+import { FaPlusCircle, FaBlog, FaFile, FaHome, FaColumns } from 'react-icons/fa';
 
 const Header = () => {
 
@@ -17,8 +17,10 @@ const Header = () => {
     if(pathname.includes("/admin-dashboard")){
       return <header className="bg-medium w-full">
         <nav className='flex justify-evenly py-4'>
+          <Link className="flex gap-3 items-center" href={"/admin-dashboard/category"}><FaColumns /> <span>Category</span></Link>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard/blogs"}><FaFile /> <span>Blogs</span></Link>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard"}><FaPlusCircle /> <span>Add Blog</span></Link>
+          <Link className="flex gap-3 items-center" href={"/admin-dashboard/add-category"}><FaPlusCircle /> <span>Add Category</span></Link>
           <Link className="flex gap-3 items-center" href={"/"}><FaHome /> <span>Go Home</span></Link>
         </nav>
       </header>

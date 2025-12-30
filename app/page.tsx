@@ -1,5 +1,5 @@
 import Blogs from '@/components/UserComp/Blogs'
-import { Categories } from '@/components/UserComp/Categories'
+import Categories from '@/components/UserComp/Categories'
 import FeaturedBlogs from '@/components/UserComp/FeaturedBlogs'
 import Gallery from '@/components/UserComp/Gallery'
 import LatestPosts from '@/components/UserComp/LatestPosts'

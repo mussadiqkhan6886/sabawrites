@@ -14,3 +14,11 @@ export interface Blog {
   content: string;
   createdAt: string;
 }
+
+export interface Category {
+  _id: string;
+  name: string;
+  description: string;
+  image: string;
+  isActive: boolean;
+}

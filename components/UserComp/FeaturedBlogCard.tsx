@@ -26,7 +26,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
 }) => {
   const publish = new Date(publishedAt).toLocaleDateString()
   return (
-    <Link href={`/blogs/${slug}`} className="block group px-2 sm:px-0 h-125">
+    <Link href={`/blogs/${slug}`} className="block group px-2 sm:px-0 h-145">
       <div className="overflow-hidden sm:border-r sm:px-2 md:px-10 border-main transition duration-500  flex flex-col">
         {reverse ? (
           <>
@@ -36,7 +36,13 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
               <h3 className={`${playfair.className} mt-2 text-2xl font-light line-clamp-2`}>
                 {title}
               </h3>
-              <p className="mt-2  text-sm line-clamp-3">{excerpt}</p>
+              <p className="mt-2  text-sm line-clamp-3">
+                {excerpt
+                  ? excerpt.length > 80
+                    ? `${excerpt.slice(0, 80)}...`
+                    : excerpt
+                  : ""}
+              </p>
               <div className="mt-4 text-xs text-gray-500 flex justify-between">
                 <span>Read Time: {readTime}</span>
                 <span>{publish}</span>
@@ -44,7 +50,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
             </div>
 
             {/* Image Second */}
-            <div className="relative h-72 mb-7 w-full order-2">
+            <div className="relative h-108 mb-7 w-full order-2">
               <Image
                 src={coverImage}
                 alt={title}
@@ -56,7 +62,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
         ) : (
           <>
             {/* Image First */}
-            <div className="relative h-72 w-full order-1">
+            <div className="relative h-108 w-full order-1">
               <Image
                 src={coverImage}
                 alt={title}
@@ -71,7 +77,13 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
               <h3 className={`${playfair.className} mt-2 text-2xl font-light line-clamp-2`}>
                 {title}
               </h3>
-              <p className="mt-2  text-sm line-clamp-3">{excerpt}</p>
+              <p className="mt-2  text-sm line-clamp-3">
+                {excerpt
+                  ? excerpt.length > 80
+                    ? `${excerpt.slice(0, 80)}...`
+                    : excerpt
+                  : ""}
+              </p>
               <div className="mt-4 text-xs text-gray-500 flex justify-between">
                 <span>Read Time: {readTime}</span>
                 <span>{publish}</span>

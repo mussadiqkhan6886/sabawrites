@@ -14,24 +14,6 @@ import { playfair } from '@/lib/fonts/font';
 
 const Latest = ({data}: {data: Blog[]}) => {
 
-    const latestUniqueBlogs: Blog[] = Object.values(
-    data.reduce<Record<string, Blog>>((acc, blog) => {
-        const existing = acc[blog.slug];
-
-        if (
-        !existing ||
-        new Date(blog.publishedAt) > new Date(existing.publishedAt)
-        ) {
-        acc[blog.slug] = blog;
-        }
-
-        return acc;
-    }, {})
-    ).sort(
-    (a, b) =>
-        new Date(b.publishedAt).getTime() -
-        new Date(a.publishedAt).getTime()
-    ).slice(0,4);
 
   return (
     <div className="relative px-0 sm:px-10">
@@ -56,7 +38,7 @@ const Latest = ({data}: {data: Blog[]}) => {
         }}
         loop={true}
       >
-        {latestUniqueBlogs.map((blog, index) => (
+        {data.map((blog, index) => (
           <SwiperSlide key={blog._id}>
             <Link href={`/blogs/${blog.slug}`} className="relative xl:h-[92vh] flex  flex-col">
 
@@ -64,7 +46,7 @@ const Latest = ({data}: {data: Blog[]}) => {
                 width={400} height={400}
                 src={blog.coverImage}
                 alt={blog.title}
-                className="w-full h-[400px] object-cover"
+                className="w-full h-108 object-cover"
               />
 
             <div className='p-8 h-full bg-light/40 backdrop-blur-sm'>
@@ -74,9 +56,13 @@ const Latest = ({data}: {data: Blog[]}) => {
                     {blog.title}
                 </h3>
 
-                <p className=" text-sm text-center mt-2">
-                    {blog.excerpt}
-                </p>
+               <p className="text-sm text-center mt-2">
+                {blog.excerpt
+                  ? blog.excerpt.length > 80
+                    ? `${blog.excerpt.slice(0, 80)}...`
+                    : blog.excerpt
+                  : ""}
+              </p>
               </div>
             </Link>
           </SwiperSlide>
