@@ -1,9 +1,9 @@
 'use client';
 
+import { Category } from "@/type";
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-// Dynamic import for TinyMCE to avoid SSR hydration errors
 const Editor = dynamic(
   () => import("@tinymce/tinymce-react").then((mod) => mod.Editor),
   { ssr: false }
@@ -18,6 +18,7 @@ export default function BlogEditor() {
   const [featured, setFeatured] = useState(false);
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false)
+  const [categories, setCategories] = useState<Category[] | null>(null)
 
   // Upload cover image to backend -> Cloudinary
   const uploadCoverImage = async (): Promise<string | null> => {
@@ -32,6 +33,16 @@ export default function BlogEditor() {
     const data = await res.json();
     return data.url as string;
   };
+
+  const fetchCategories = async () => {
+    const res = await fetch("/api/category")
+    const data = await res.json()
+    setCategories(data.categories)
+  }
+
+  useEffect(() => {
+    fetchCategories()
+  }, [])
 
   const saveBlog = async () => {
     try {
@@ -100,13 +111,20 @@ export default function BlogEditor() {
           />
         </label>
 
-        <input
+       {categories != null && <select
           className="border p-2"
-          type="text"
-          placeholder="Category"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
-        />
+        >
+          <option value="">Choose Category</option>
+
+          {categories.map((item) => (
+            <option key={item._id} value={item._id}>
+              {item.name}
+            </option>
+          ))}
+        </select>}
+
 
         <input
           className="border p-2"

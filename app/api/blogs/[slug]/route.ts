@@ -15,7 +15,7 @@ export async function GET(req: Request, { params }: Params) {
     return NextResponse.json({ success: false, message: "Slug required" }, { status: 400 });
 
   try {
-    const blog = await BlogSchema.findOne({ slug });
+    const blog = await BlogSchema.findOne({ slug }).populate("category", "name");
     if (!blog)
       return NextResponse.json({ success: false, message: "Blog not found" }, { status: 404 });
 
