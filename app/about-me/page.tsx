@@ -31,7 +31,7 @@ export default function About() {
         About Me
       </h1>
   
-       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full md:h-[75vh] scale-110 object-cover object-bottom" />
+       <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full md:h-[75vh] scale-110 object-cover object-bottom" priority />
 
       {/* Content */}
       <div className={`${playfair.className} text-gray-700 mt-20 leading-relaxed text-lg`}>
@@ -96,8 +96,6 @@ export default function About() {
           Saba
         </p>
 
-        {/* Clear float */}
-        <div className="clear-both"></div>
       </div>
            
     </section>
