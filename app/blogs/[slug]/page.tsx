@@ -4,6 +4,7 @@ import { connectDB } from '@/lib/database'
 import { playfair } from '@/lib/fonts/font'
 import BlogSchema from '@/lib/schema/BlogSchema'
 import { Blog } from '@/type'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import React from 'react'
 

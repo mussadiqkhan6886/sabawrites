@@ -1,6 +1,7 @@
 import { connectDB } from "@/lib/database";
 import BlogSchema from "@/lib/schema/BlogSchema";
 import CategorySchema from "@/lib/schema/CategorySchema";
+import { Blog, Category } from "@/type";
 import { NextResponse } from "next/server";
 
 type SitemapUrl = {
@@ -14,10 +15,10 @@ export async function GET() {
     await connectDB();
 
     const blogsRes = await BlogSchema.find({}).lean();
-    const blogs: DropType[] = JSON.parse(JSON.stringify(blogsRes));
+    const blogs: Blog[] = JSON.parse(JSON.stringify(blogsRes));
 
     const categoryRes = await CategorySchema.find({}).lean();
-    const categories: CookieType[] = JSON.parse(JSON.stringify(categoryRes));
+    const categories: Category[] = JSON.parse(JSON.stringify(categoryRes));
 
     const staticPages = [
       '/',
