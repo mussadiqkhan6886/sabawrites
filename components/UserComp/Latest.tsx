@@ -25,8 +25,8 @@ const Latest = ({data}: {data: Blog[]}) => {
         spaceBetween={20}
         slidesPerView={1}
         navigation={{
-          prevEl: "#prevNav",
-          nextEl: "#nextNav",
+          prevEl: "#latestPrevNav",
+          nextEl: "#latestNextNav",
         }}
         breakpoints={{
           768: {
@@ -71,14 +71,14 @@ const Latest = ({data}: {data: Blog[]}) => {
 
       <div className="flex justify-center gap-4 mt-6">
         <button
-          id="prevNav"
+          id="latestPrevNav"
           className="px-4 py-3 border border-dark text-dark rounded-full hover:bg-dark hover:text-white transition"
         >
           ←
         </button>
 
         <button
-          id="nextNav"
+          id="latestNextNav"
           className="px-4 py-3 border border-dark text-dark rounded-full hover:bg-dark hover:text-white transition"
         >
           →

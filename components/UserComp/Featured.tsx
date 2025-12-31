@@ -20,7 +20,7 @@ const Featured = ({blogs}: {blogs: Blog[]}) => {
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 3 },
         }}
-        navigation={{nextEl: "#nextNav", prevEl: "#prevNav"}}
+        navigation={{nextEl: "#featuredNextNav", prevEl: "#featuredPrevNav"}}
         className='max-w-7xl mx-auto'
     >
       {blogs.filter(post => post.featured === true).map((blog: Blog, index: number) => (
@@ -31,14 +31,14 @@ const Featured = ({blogs}: {blogs: Blog[]}) => {
     </Swiper>
     <div className="flex z-40 justify-center gap-4 mt-6">
         <button
-            id="prevNav"
+            id="featuredPrevNav"
             className="px-4 py-3 border border-dark text-dark rounded-full hover:bg-dark hover:text-white transition"
         >
             ←
         </button>
 
         <button
-            id="nextNav"
+            id="featuredNextNav"
             className="px-4 py-3 border border-dark text-dark rounded-full hover:bg-dark hover:text-white transition"
         >
             →
