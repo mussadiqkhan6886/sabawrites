@@ -7,6 +7,8 @@ import { connectDB } from "@/lib/database";
 import BlogSchema from "@/lib/schema/BlogSchema";
 import { Blog } from "@/type";
 
+export const revalidate = 60
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

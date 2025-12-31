@@ -7,6 +7,8 @@ import CategorySchema from "@/lib/schema/CategorySchema";
 import { Category } from "@/type";
 import Link from "next/link";
 
+export const revalidate = 60
+
 const Categories = async () => {
 
   await connectDB()

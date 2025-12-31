@@ -6,6 +6,8 @@ import Image from 'next/image'
 import { connectDB } from '@/lib/database'
 import BlogSchema from '@/lib/schema/BlogSchema'
 
+export const revalidate = 60
+
 const FeaturedBlogs = async () => {
 
   await connectDB()

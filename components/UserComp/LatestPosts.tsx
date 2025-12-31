@@ -5,6 +5,8 @@ import { blogs } from '@/lib/constants'
 import { connectDB } from '@/lib/database'
 import BlogSchema from '@/lib/schema/BlogSchema'
 
+export const revalidate = 60
+
 const LatestPosts = async () => {
 
    await connectDB()

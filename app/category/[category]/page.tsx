@@ -9,6 +9,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import React from 'react'
 
+export const revalidate = 60
+
 export async function generateMetadata({params}: {params: Promise<{ category: string }>}): Promise<Metadata> {
 
   const category = (await params).category
