@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2  gap-8">
         {/* Brand */}
         <div className="space-y-4 z-30 relative">
-          <h6 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h6>
+          <h5 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h5>
           {/* <Image src={"/spin.svg"} alt="spin image footer" width={50} height={50} className="spinAnimation absolute -top-4 left-30 md:right-17" /> */}
           <p className="text-black">
             A lifestyle & beauty blog celebrating elegance, wellness, and feminine energy.
@@ -45,9 +45,9 @@ export default function Footer() {
           <div className="flex flex-col space-y-3 mt-2 z-30">
             <h6 className="text-lg font-semibold mb-4">Social Links</h6>
             <div className="flex gap-6">
-              <Link className="text-2xl" href={"#"}><FaInstagram /></Link>
-              <Link className="text-2xl" href={"#"}><FaFacebook /></Link>
-              <Link className="text-2xl" href={"#"}><FaPinterest /></Link>
+              <Link className="text-2xl" aria-label="instagram link" href={"#"}><FaInstagram name="instagram" aria-label="instagram" /></Link>
+              <Link className="text-2xl" aria-label="facebook link" href={"#"}><FaFacebook name="facebook" aria-label="facebook" /></Link>
+              <Link className="text-2xl" aria-label="pinterest link" href={"#"}><FaPinterest name="pinterest" aria-label="pinterest" /></Link>
             </div>
           </div>
       </div>
