@@ -60,14 +60,14 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
 
   if(categoryBasedBlogs.length === 0){
     return (<main>
-      <h1>NO CATEGORY AVAILABLE</h1>
+      <h2 className="text-center py-10">NO BLOGS AVAILABLE</h2>
     </main>)
   }
 
   return (
     <main className='max-w-7xl mx-auto'>
       <Image src={"/spin.svg"} alt='spinner image flower' width={60} height={60} className='spinAnimation absolute left-[55%] -translate-x-1/2' />
-      <h1 className={`${dancing.className} text-3xl md:text-5xl text-center py-10 capitalize`}>{category}</h1>
+      <h2 className={`${dancing.className} text-3xl md:text-5xl text-center py-10 capitalize`}>{category}</h2>
       <p className='text-center max-x-4xl mx-auto mb-3'>{categoryRes[0].description}</p>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
         {categoryBasedBlogs.map((blog: Blog) => (
