@@ -8,6 +8,8 @@ import Velocity from '@/components/UserComp/Velocity'
 import Hero from '@/sections/Hero'
 import React from 'react'
 
+export const relative = 60;
+
 const Home = () => {
   return (
     <main>
