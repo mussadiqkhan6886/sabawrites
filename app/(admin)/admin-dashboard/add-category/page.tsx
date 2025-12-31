@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import imageCompression from "browser-image-compression";
+
 
 const Page = () => {
   const [name, setName] = useState("");
@@ -18,7 +20,16 @@ const Page = () => {
       const formData = new FormData();
       formData.append("name", name);
       formData.append("description", description);
-      if (image) formData.append("image", image);
+
+      if (image) {
+        const compressedFile = await imageCompression(image, {
+          maxSizeMB: 1,
+          maxWidthOrHeight: 1200,
+          useWebWorker: true,
+        });
+        formData.append("image", compressedFile);
+      }
+
 
       const res = await fetch("/api/category", {
         method: "POST",

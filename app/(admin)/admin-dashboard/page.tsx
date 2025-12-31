@@ -20,12 +20,17 @@ export default function BlogEditor() {
   const [loading, setLoading] = useState(false)
   const [categories, setCategories] = useState<Category[] | null>(null)
 
-  // Upload cover image to backend -> Cloudinary
   const uploadCoverImage = async (): Promise<string | null> => {
     if (!coverImage) return null;
 
+    const compressedFile = await imageCompression(coverImage, {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 1200,
+      useWebWorker: true,
+    });
+
     const formData = new FormData();
-    formData.append("file", coverImage);
+    formData.append("file", compressedFile);
 
     const res = await fetch("/api/upload", { method: "POST", body: formData });
     if (!res.ok) throw new Error("Cover image upload failed");
@@ -169,8 +174,15 @@ export default function BlogEditor() {
             "undo redo | blocks | bold italic underline | " +
             "alignleft aligncenter alignright | bullist numlist | image link | code",
           images_upload_handler: async (blobInfo: any) => {
+             const file = blobInfo.blob();
+            const compressedFile = await imageCompression(file, {
+              maxSizeMB: 1,
+              maxWidthOrHeight: 1200,
+              useWebWorker: true,
+            });
+
             const formData = new FormData();
-            formData.append("file", blobInfo.blob());
+            formData.append("file", compressedFile);
 
             const res = await fetch("/api/upload", { method: "POST", body: formData });
             if (!res.ok) throw new Error("Image upload failed");
