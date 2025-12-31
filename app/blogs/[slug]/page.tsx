@@ -1,5 +1,4 @@
 import BlogCard from '@/components/UserComp/BlogCard'
-import { blogCategories, blogs } from '@/lib/constants'
 import { connectDB } from '@/lib/database'
 import { playfair } from '@/lib/fonts/font'
 import BlogSchema from '@/lib/schema/BlogSchema'
