@@ -17,7 +17,7 @@ const FeaturedBlogs = async () => {
   return (
     <section  className='py-20 relative'>
       <SectionTitle firstWord='Featured' secondWord='Stories' />
-      <div >
+      <div>
         <Featured blogs={data} />
       </div>
     </section>

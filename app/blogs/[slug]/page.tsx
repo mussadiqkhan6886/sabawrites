@@ -45,7 +45,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
   return (
     <main>
-      <div className='flex flex-col-reverse lg:flex-row bg-medium lg:h-screen '>
+      <section className='flex flex-col-reverse lg:flex-row bg-medium lg:h-screen '>
         <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
             <p className='font-semibold text-sm'>{blog.category.name}</p>
@@ -57,14 +57,14 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
           </div>
         </div>
         <Image src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='w-full object-center object-cover h-full' />
-      </div>
+      </section>
 
-      <div className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
+      <article className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
         
-      </div>
+      </article>
 
       <hr />
-      <div className='max-w-7xl mx-auto'>
+      <section className='max-w-7xl mx-auto'>
         <h2 className={`${playfair.className} text-center text-2xl sm:text-3xl py-10`}>More Related Stories About {blog.category?.name}</h2>
         {collections.length > 0 ? <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4'>
           {collections.map((item: Blog) => (
@@ -73,7 +73,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         </div>: <div>
           <h2 className='text-center'>No More Blogs In This Collections</h2>
           </div>}
-      </div>
+      </section>
     </main>
   )
 }

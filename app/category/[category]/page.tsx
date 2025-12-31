@@ -19,8 +19,12 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
   const blogs = JSON.parse(JSON.stringify(res))
 
   const categoryBasedBlogs = blogs.filter(
-  (blog: Blog) => blog.category?.name.toLowerCase() === category.toLowerCase()
-)
+    (blog: Blog) => blog.category?.name.toLowerCase() === category.toLowerCase()
+  )
+
+  const cat = await CategorySchema.find({name: category}).lean()
+  
+  const categoryRes = JSON.parse(JSON.stringify(cat))
 
   if(categoryBasedBlogs.length === 0){
     return (<main>
@@ -28,11 +32,11 @@ const page = async ({params}: {params: Promise<{category: string}>}) => {
     </main>)
   }
 
-
   return (
     <main className='max-w-7xl mx-auto'>
       <Image src={"/spin.svg"} alt='spinner image flower' width={60} height={60} className='spinAnimation absolute left-[55%] -translate-x-1/2' />
       <h1 className={`${dancing.className} text-3xl md:text-5xl text-center py-10 capitalize`}>{category}</h1>
+      <p className='text-center max-x-4xl mx-auto mb-3'>{categoryRes[0].description}</p>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5'>
         {categoryBasedBlogs.map((blog: Blog) => (
           <BlogCard key={blog._id} {...blog} />

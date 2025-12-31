@@ -26,9 +26,9 @@ const Hero = () => {
           <Image src={"/sticker-1.png"} alt='makeup icon' width={130} height={130} className='rotate-12 absolute md:-bottom-[250px] -bottom-[470px] -right-6 md:-right-20 z-30 block' /> */}
         </div>
 
-        <h1 className={`${playfair.className} text-white sm:text-black font-semibold text-4xl mb-4`}>
+        <h2 className={`${playfair.className} text-white sm:text-black font-semibold text-4xl mb-4`}>
           Inspiring Everyday Life & Style
-        </h1>
+        </h2>
         <p className='mb-6 text-white sm:text-black'>
           Join me as I share tips, stories, and inspiration on lifestyle, fashion, beauty, and wellness. Discover ideas that make every day a little brighter and uniquely yours.
         </p>

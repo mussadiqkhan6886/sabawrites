@@ -15,10 +15,9 @@ const Blogs = async () => {
 
   const data = JSON.parse(JSON.stringify(res))
 
-  console.log(data)
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-16">
+    <main className="max-w-7xl mx-auto px-4 py-16">
       
       <div className="text-center mb-12 z-10">
         <h1 className={`${playfair.className} text-4xl md:text-5xl font-semibold mb-4`}>
@@ -30,13 +29,13 @@ const Blogs = async () => {
         </p>
       </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 z-10">
+      <section className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 z-10">
         {data.map((blog: Blog) => (
           <BlogCard key={blog._id} {...blog} />
         ))}
-      </div>
+      </section>
       <Image src={"/flower-4.png"} alt="blogs page image flower" width={1000} height={1000} className="w-full h-full object-center object-cover fixed bottom-0 -z-10" />
-    </section>
+    </main>
   );
 };
 

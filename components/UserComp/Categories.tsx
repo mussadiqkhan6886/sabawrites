@@ -16,7 +16,7 @@ const Categories = async () => {
   const categories = JSON.parse(JSON.stringify(res))
 
   return (
-    <div className="rounded-md flex pt-10 flex-col antialiased bg-white items-center justify-center relative overflow-hidden max-w-7xl mx-auto">
+    <section className="rounded-md flex pt-10 flex-col antialiased bg-white items-center justify-center relative overflow-hidden max-w-7xl mx-auto">
         <SectionTitle firstWord="Categories" secondWord="Blogs" />
       {/* <InfiniteMovingCards
         items={blogCategories.slice(0, 5)}
@@ -36,7 +36,7 @@ const Categories = async () => {
           </Link>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 

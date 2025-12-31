@@ -43,7 +43,7 @@ export default function Footer() {
         </div> */}
 
           <div className="flex flex-col space-y-3 mt-2 z-30">
-            <h3 className="text-lg font-semibold mb-4">Social Links</h3>
+            <h6 className="text-lg font-semibold mb-4">Social Links</h6>
             <div className="flex gap-6">
               <Link className="text-2xl" href={"#"}><FaInstagram /></Link>
               <Link className="text-2xl" href={"#"}><FaFacebook /></Link>

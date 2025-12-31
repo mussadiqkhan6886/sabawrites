@@ -3,7 +3,6 @@ import BlogSchema from "@/lib/schema/BlogSchema";
 import CategorySchema from "@/lib/schema/CategorySchema";
 import { NextResponse } from "next/server";
 
-
 type SitemapUrl = {
   loc: string;           
   changefreq: string;    
