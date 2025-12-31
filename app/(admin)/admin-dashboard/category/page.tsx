@@ -4,6 +4,7 @@ import { Category } from "@/type";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
+
 const CategoriesPage = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(false);

@@ -3,6 +3,7 @@
 import { Category } from "@/type";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import imageCompression from "browser-image-compression";
 
 const Editor = dynamic(
   () => import("@tinymce/tinymce-react").then((mod) => mod.Editor),
