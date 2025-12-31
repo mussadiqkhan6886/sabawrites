@@ -7,6 +7,33 @@ import { connectDB } from "@/lib/database";
 import BlogSchema from "@/lib/schema/BlogSchema";
 import { Blog } from "@/type";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blogs",
+  description:
+    " Thoughts on beauty, skincare, slow living, and all the little moments that make life softer.",
+
+  keywords: [
+    "blog categories",
+    "fashion blogs",
+    "beauty blogs",
+    "makeup blogs",
+    "skincare blogs",
+    "lifestyle blogs",
+    "Saba Writes",
+    "blogs",
+    "tiktok"
+  ],
+
+  openGraph: {
+    title: "Blogs",
+    description:
+      "Thoughts on beauty, skincare, slow living, and all the little moments that make life softer.",
+    type: "website",
+  },
+}
+
 const Blogs = async () => {
 
   await connectDB()

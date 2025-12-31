@@ -5,8 +5,38 @@ import { dancing } from '@/lib/fonts/font'
 import BlogSchema from '@/lib/schema/BlogSchema'
 import CategorySchema from '@/lib/schema/CategorySchema'
 import { Blog } from '@/type'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import React from 'react'
+
+export async function generateMetadata({params}: {params: Promise<{ category: string }>}): Promise<Metadata> {
+
+  const category = (await params).category
+  const categoryName = category.charAt(0).toUpperCase() + category.slice(1);
+
+  return {
+    title: `${categoryName} Blogs `,
+    description: `Read the latest ${categoryName.toLowerCase()} blogs on Saba Writes.`,
+
+    openGraph: {
+      title: `${categoryName} Blogs `,
+      description: `Explore ${categoryName.toLowerCase()} blogs curated by Saba.`,
+      type: "website",
+    },
+  };
+}
+
+
+export async function generateStaticParams() {
+  await connectDB();
+
+  const categories = await CategorySchema.find({}).lean();
+
+  return categories.map((item) => ({
+    category: item.slug,
+  }));
+}
+
 
 const page = async ({params}: {params: Promise<{category: string}>}) => {
 

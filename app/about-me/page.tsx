@@ -1,5 +1,28 @@
 import { playfair } from "@/lib/fonts/font";
+import { Metadata } from "next";
 import Image from "next/image";
+
+
+export const metadata: Metadata = {
+  title: "About Me | Saba Writes",
+  description:
+    "Learn more about Saba, the creator behind Saba Writes – a blog dedicated to fashion, beauty, skincare, makeup, and lifestyle.",
+
+  openGraph: {
+    title: "About Me | Saba Writes",
+    description:
+      "Meet Saba, the voice behind Saba Writes, sharing insights on fashion, beauty, skincare, and lifestyle.",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About Me | Saba Writes",
+    description:
+      "Get to know Saba, the creator of Saba Writes, covering fashion, beauty, skincare, and lifestyle blogs.",
+  },
+};
+
 
 export default function About() {
   return (

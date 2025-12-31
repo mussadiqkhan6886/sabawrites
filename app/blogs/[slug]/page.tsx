@@ -1,11 +1,50 @@
 import BlogCard from '@/components/UserComp/BlogCard'
-import { blogs } from '@/lib/constants'
+import { blogCategories, blogs } from '@/lib/constants'
 import { connectDB } from '@/lib/database'
 import { playfair } from '@/lib/fonts/font'
 import BlogSchema from '@/lib/schema/BlogSchema'
 import { Blog } from '@/type'
 import Image from 'next/image'
 import React from 'react'
+
+export async function generateMetadata({params}: {params: Promise<{ slug: string }>}): Promise<Metadata> {
+
+  const slug = (await params).slug
+
+   const formattedSlug = slug
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+  
+
+  return {
+     title: `${formattedSlug} `,
+      description: `Read the latest ${formattedSlug.toLowerCase()} blogs on Saba Writes.`,
+
+    openGraph: {
+      title: `${formattedSlug} Blog`,
+      description: `Explore ${formattedSlug.toLowerCase()} blogs curated by Saba.`,
+      type: "website",
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${formattedSlug} Blog`,
+      description: `Discover ${formattedSlug.toLowerCase()} blogs on Saba Writes.`,
+    },
+  };
+}
+
+
+export async function generateStaticParams() {
+  await connectDB();
+
+  const blogs = await BlogSchema.find({}).lean();
+
+  return blogs.map((item) => ({
+    slug: item.slug,
+  }));
+}
 
 const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
