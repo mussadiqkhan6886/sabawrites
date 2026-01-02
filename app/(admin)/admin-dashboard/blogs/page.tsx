@@ -57,13 +57,13 @@ const BlogsPage = () => {
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="max-w-7xl mx-auto md:pl-50 min-h-screen p-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {blogs.map((blog) => {
       
       const publishedAt = new Date(blog.createdAt).toLocaleDateString()
       return (
 
-        <div key={blog._id}>
+        <div key={blog._id} className="max-h-[540px]">
             <Link href={`/admin-dashboard/blogs/${blog.slug}`} className="h-full block">
                 <Image
                     width={200}

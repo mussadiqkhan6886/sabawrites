@@ -7,7 +7,7 @@ import Navigation from './Navigation';
 import { AnimatePresence } from 'framer-motion';
 import { playfair } from '@/lib/fonts/font';
 import { usePathname } from 'next/navigation';
-import { FaPlusCircle, FaFile, FaHome, FaColumns } from 'react-icons/fa';
+import { FaPlusCircle, FaFile, FaHome } from 'react-icons/fa';
 
 const Header = () => {
 
@@ -15,8 +15,8 @@ const Header = () => {
     const pathname = usePathname()
 
     if(pathname.includes("/admin-dashboard")){
-      return <aside className="bg-medium fixed left-0 top-0 h-full px-5 w-45 z-50">
-        <nav className='flex flex-col gap-20 pt-20 justify-start h-full py-4'>
+      return <aside className="bg-medium w-full md:fixed left-0 top-0 h-full px-5 md:w-45 z-50">
+        <nav className='flex md:flex-col gap-20 md:pt-20 justify-start h-full py-4'>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard/blogs"}><FaFile /> <span>Blogs</span></Link>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard"}><FaPlusCircle /> <span>Add Blog</span></Link>
           <Link className="flex gap-3 items-center" href={"/"}><FaHome /> <span>Go Home</span></Link>
