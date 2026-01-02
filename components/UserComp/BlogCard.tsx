@@ -17,7 +17,7 @@ const BlogCard = ({slug, coverImage, title, excerpt}: Props) => {
         width={200}
         height={200}
         src={coverImage}
-        alt={title}
+        alt={excerpt}
         className="h-[400px] w-full object-cover"
         />
 

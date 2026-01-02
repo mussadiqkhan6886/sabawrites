@@ -50,7 +50,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
             <div className="relative h-108 mb-7 w-full order-2">
               <Image
                 src={coverImage}
-                alt={title}
+                alt={excerpt}
                 fill
                 className="object-cover"
               />
@@ -62,7 +62,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
             <div className="relative h-108 w-full order-1">
               <Image
                 src={coverImage}
-                alt={title}
+                alt={excerpt}
                 fill
                 className="object-cover"
               />

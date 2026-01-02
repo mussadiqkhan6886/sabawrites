@@ -11,7 +11,7 @@ const Hero = () => {
       
       <Image
         src="/heroSection.jpg"
-        alt="hero image"
+        alt="main hero image flower and laptop"
         width={1000}
         height={1000}
         className='w-full h-full object-cover rounded-xl'
