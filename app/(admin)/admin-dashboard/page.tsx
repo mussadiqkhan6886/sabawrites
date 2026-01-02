@@ -1,6 +1,5 @@
 'use client';
 
-import { Category } from "@/type";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import imageCompression from "browser-image-compression";
@@ -14,7 +13,6 @@ export default function BlogEditor() {
   const [title, setTitle] = useState("");
   const [excerpt, setExcerpt] = useState("");
   const [coverImage, setCoverImage] = useState<File | null>(null);
-  const [category, setCategory] = useState("");
   const [readTime, setReadTime] = useState("");
   const [featured, setFeatured] = useState(false);
   const [content, setContent] = useState("");
@@ -40,16 +38,6 @@ export default function BlogEditor() {
     return data.url as string;
   };
 
-  const fetchCategories = async () => {
-    const res = await fetch("/api/category")
-    const data = await res.json()
-    setCategories(data.categories)
-  }
-
-  useEffect(() => {
-    fetchCategories()
-  }, [])
-
   const saveBlog = async () => {
     try {
       setLoading(true)
@@ -63,7 +51,6 @@ export default function BlogEditor() {
           slug: title.toLowerCase().replace(/\s+/g, "-"),
           excerpt,
           coverImage: coverUrl,
-          category,
           readTime,
           featured,
           content,
@@ -116,21 +103,6 @@ export default function BlogEditor() {
             onChange={(e) => setCoverImage(e.target.files?.[0] || null)}
           />
         </label>
-
-       {categories != null && <select
-          className="border p-2"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="">Choose Category</option>
-
-          {categories.map((item) => (
-            <option key={item._id} value={item._id}>
-              {item.name}
-            </option>
-          ))}
-        </select>}
-
 
         <input
           className="border p-2"

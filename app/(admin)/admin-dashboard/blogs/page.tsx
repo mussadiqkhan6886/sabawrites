@@ -1,7 +1,6 @@
 'use client';
 
 
-import BlogCard from "@/components/UserComp/BlogCard";
 import { playfair } from "@/lib/fonts/font";
 import { Blog } from "@/type";
 import Image from "next/image";
@@ -51,11 +50,11 @@ const BlogsPage = () => {
   }, []);
 
   if (loading) {
-    return <div className="text-center mt-20 text-lg">Loading blogs...</div>;
+    return <div className="text-center mt-20 text-lg h-screen">Loading blogs...</div>;
   }
 
   if (blogs.length === 0) {
-    return <div className="text-center mt-20 text-lg">No blogs found.</div>;
+    return <div className="text-center mt-20 text-lg h-screen">No blogs found.</div>;
   }
 
   return (

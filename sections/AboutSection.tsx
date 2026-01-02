@@ -26,8 +26,8 @@ const AboutSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
       >
-        <p className="text-xl">
-          <strong>Hi loves, I am Saba</strong>
+        <p className="text-xl italic font-medium">
+          Hi loves, I am Saba
         </p>
 
         <p>

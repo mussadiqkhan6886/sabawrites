@@ -1,13 +1,22 @@
-import { blogCategories } from "@/lib/constants";
+'use client';
+
 import { playfair } from "@/lib/fonts/font";
-import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
 
 export default function Footer() {
+
+  const pathname = usePathname()
+
+  if(pathname.startsWith("/admin-dashboard")){
+    return <footer>
+      <p className="text-center py-2 ">&copy; {new Date().getFullYear()} saba writes. All rights reserved.</p>
+    </footer>
+  }
+  
   return (
-    // style={{backgroundImage: `URL(${"/footer.jpg"})`, backgroundPosition: "bottom", backgroundSize:"cover"}}
     <footer className="text-gray-800 bg-white  mt-12 relative">
       <div className="absolute inset-0 w-full h-full bg-white/40" />
       <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2  gap-8">
@@ -19,29 +28,6 @@ export default function Footer() {
             A lifestyle & beauty blog celebrating elegance, wellness, and feminine energy.
           </p>
         </div>
-
-        {/* Quick Links
-        <div className="md:ml-10 z-30">
-          <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-black">
-            <li><a href="/" className="hover:text-pink-500 transition">Home</a></li>
-            <li><a href="/about" className="hover:text-pink-500 transition">About</a></li>
-            <li><a href="/contact" className="hover:text-pink-500 transition">Contact</a></li>
-            <li><a href="/blog" className="hover:text-pink-500 transition">Blog</a></li>
-          </ul>
-        </div> */}
-
-        {/* Categories
-        <div className="z-30">
-          <h3 className="text-lg font-semibold mb-4">Categories</h3>
-          <ul className="space-y-2 text-black">
-            {blogCategories.slice(0, 5).map((category) => (
-              <li key={category.id}>
-                <a href={category.link} className="hover:text-pink-500 transition">{category.name}</a>
-              </li>
-            ))}
-          </ul>
-        </div> */}
 
           <div className="flex flex-col space-y-3 mt-2 z-30">
             <h6 className="text-lg font-semibold mb-4">Social Links</h6>
