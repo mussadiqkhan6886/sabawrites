@@ -5,7 +5,6 @@ Disallow: /admin-dashboard/
 
 Allow: /
 Allow: /contact/
-Allow: /category/
 Allow: /blogs/
 Allow: /about-me/
 

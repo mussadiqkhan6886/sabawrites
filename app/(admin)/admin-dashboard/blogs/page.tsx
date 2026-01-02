@@ -21,7 +21,6 @@ const BlogsPage = () => {
         const res = await fetch(`/api/blogs/${slug}`, { method: "DELETE" });
         if (!res.ok) throw new Error("Error deleting blog");
 
-        // Remove deleted blog from state
         setBlogs((prev) => prev.filter((blog) => blog.slug !== slug));
     } catch (err) {
         console.error(err);

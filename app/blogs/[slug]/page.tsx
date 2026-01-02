@@ -28,7 +28,6 @@ export async function generateMetadata(
 
   const formattedSlug = blog.title || slug;
 
-  // Full URL for OpenGraph/Twitter
   const imageUrl = blog.coverImage
 
   return {

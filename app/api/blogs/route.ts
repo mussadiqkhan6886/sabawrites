@@ -9,7 +9,6 @@ export async function POST(req: Request) {
 
     const body: Blog = await req.json();
 
-    // Optional: simple validation
     if (!body.title || !body.content) {
       return NextResponse.json(
         { error: "Title and content are required" },

@@ -36,7 +36,6 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     fetchBlog();
   }, [slug]);
 
-  // Upload new cover image
   const handleCoverUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files?.[0]) return;
     const file = e.target.files[0];
@@ -56,7 +55,6 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     }
   };
 
-  // Delete current cover image
   const handleCoverDelete = () => {
     setBlog({ ...blog, coverImage: "" });
   };
