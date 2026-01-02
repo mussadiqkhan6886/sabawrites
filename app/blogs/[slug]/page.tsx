@@ -16,7 +16,7 @@ export async function generateMetadata(
 
   await connectDB();
 
-  const blog = await BlogSchema.findOne({ slug }).populate("category", "name").lean();
+  const blog = await BlogSchema.findOne({ slug }).lean();
 
   if (!blog) {
     return {
@@ -78,7 +78,6 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
   const res = await BlogSchema
   .findOne({ slug })
-  .populate("category", "name")
   .lean();
 
   const blog = JSON.parse(JSON.stringify(res))
