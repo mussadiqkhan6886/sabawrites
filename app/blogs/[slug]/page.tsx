@@ -9,30 +9,52 @@ import React from 'react'
 
 export const revalidate = 60
 
-export async function generateMetadata({params}: {params: Promise<{ slug: string }>}): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const slug = (await params).slug;
 
-  const slug = (await params).slug
+  await connectDB();
 
-   const formattedSlug = slug
-    .split("-")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-  
+  const blog = await BlogSchema.findOne({ slug }).populate("category", "name").lean();
+
+  if (!blog) {
+    return {
+      title: "Blog Not Found",
+      description: "Sorry, this blog does not exist.",
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const formattedSlug = blog.title || slug;
+
+  // Full URL for OpenGraph/Twitter
+  const imageUrl = blog.coverImage
 
   return {
-     title: `${formattedSlug} `,
-      description: `Read the latest ${formattedSlug.toLowerCase()} blogs on Saba Writes.`,
+    title: `${formattedSlug}`,
+    description: blog.excerpt || `Read the latest ${formattedSlug} blog on Saba Writes.`,
 
     openGraph: {
-      title: `${formattedSlug} Blog`,
-      description: `Explore ${formattedSlug.toLowerCase()} blogs curated by Saba.`,
-      type: "website",
+      title: `${formattedSlug} | Saba Writes`,
+      description: blog.excerpt || `Explore ${formattedSlug} blog curated by Saba.`,
+      type: "article",
+      url: `https://sabawrites.vercel.app/blogs/${slug}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: formattedSlug,
+        },
+      ],
     },
 
     twitter: {
       card: "summary_large_image",
-      title: `${formattedSlug} Blog`,
-      description: `Discover ${formattedSlug.toLowerCase()} blogs on Saba Writes.`,
+      title: `${formattedSlug} | Saba Writes`,
+      description: blog.excerpt || `Discover ${formattedSlug} blog on Saba Writes.`,
+      images: [imageUrl],
     },
   };
 }
@@ -77,7 +99,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
   if(!blog){
     return (
       <main>
-        <h1>No Blog Found</h1>
+        <h2>No Blog Found</h2>
       </main>
     )
   }
@@ -90,7 +112,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
             <p className='font-semibold text-sm'>{blog.category.name}</p>
-            <h1 className={`${playfair.className} text-5xl lg:text-6xl `}>{blog.title}</h1>
+            <h2 className={`${playfair.className} text-5xl lg:text-6xl `}>{blog.title}</h2>
           </div>
           <div className='flex mt-10 md:mt-0 flex-col gap-3'>
           <p>{publishAt}</p>

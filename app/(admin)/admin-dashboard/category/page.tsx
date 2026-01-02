@@ -54,7 +54,7 @@ const CategoriesPage = () => {
 
   return (
     <main className="p-8 max-w-6xl mx-auto">
-      <h1 className="text-2xl font-bold mb-6">All Categories</h1>
+      <h2 className="text-2xl font-bold mb-6">All Categories</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
         {categories.map((cat) => (
           <div key={cat._id} className="border rounded p-4 flex flex-col items-center">

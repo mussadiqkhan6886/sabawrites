@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 relative">
-      <h1 className={`text-5xl uppercase absolute left-1/2 top-10 w-full -translate-x-1/2 ${playfair.className} font-bold mb-10 text-center text-main`}>
+      <h2 className={`text-5xl uppercase absolute left-1/2 top-10 w-full -translate-x-1/2 ${playfair.className} font-bold mb-10 text-center text-main`}>
         About Me
-      </h1>
+      </h2>
   
        <Image src={"/flower-5.png"} alt="flower in end about me" width={1000} height={1000} className="w-full md:h-[75vh] scale-110 object-cover object-bottom" priority />
 

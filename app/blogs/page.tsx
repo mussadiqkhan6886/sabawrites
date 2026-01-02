@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   ],
 
   openGraph: {
-    title: "Blogs",
+    title: "Blogs | Saba writes",
     description:
       "Thoughts on beauty, skincare, slow living, and all the little moments that make life softer.",
     type: "website",
@@ -49,9 +49,9 @@ const Blogs = async () => {
     <main className="max-w-7xl mx-auto px-4 py-16">
       
       <div className="text-center mb-12 z-10">
-        <h1 className={`${playfair.className} text-4xl md:text-5xl font-semibold mb-4`}>
+        <h2 className={`${playfair.className} text-4xl md:text-5xl font-semibold mb-4`}>
           Our Journal
-        </h1>
+        </h2>
         <p className="max-w-2xl mx-auto">
           Thoughts on beauty, skincare, slow living, and all the little
           moments that make life softer.

@@ -56,7 +56,7 @@ const Page = () => {
 
   return (
     <main className="p-8 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Add Category</h1>
+      <h2 className="text-2xl font-bold mb-4">Add Category</h2>
       {message && <p className="mb-4 text-green-500">{message}</p>}
       {error && <p className="mb-4 text-red-500">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
