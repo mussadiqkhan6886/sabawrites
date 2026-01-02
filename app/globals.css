@@ -41,9 +41,40 @@ body{
   }
 }
 
-li{
-  list-style-type: disc;
+#blog {
+  line-height: 1.6;
+  color: #222;
 }
-ol li{
-  list-style-type:decimal;
+
+/* Headings */
+#blog h1 { font-size: 2.2rem; font-weight: 700; margin: 1.2em 0 0.6em; }
+#blog h2 { font-size: 1.8rem; font-weight: 600; margin: 1em 0 0.5em; }
+#blog h3 { font-size: 1.5rem; font-weight: 600; margin: 0.9em 0 0.4em; }
+#blog h4 { font-size: 1.3rem; font-weight: 500; margin: 0.8em 0 0.4em; }
+#blog h5 { font-size: 1.1rem; font-weight: 500; margin: 0.7em 0 0.3em; }
+#blog h6 { font-size: 1rem; font-weight: 500; margin: 0.6em 0 0.3em; }
+
+/* Paragraphs */
+#blog p { font-size: 1rem; margin: 0.5em 0; }
+#blog p,
+#blog li,
+#blog blockquote {
+  text-align: justify;
+  text-justify: inter-word;
 }
+
+
+/* Links */
+#blog a { color: #0077cc; text-decoration: underline; }
+
+/* Lists */
+#blog ul { list-style: disc; padding-left: 1.5em; }
+#blog ol { list-style: decimal; padding-left: 1.5em; }
+#blog li { margin: 0.3em 0; }
+
+/* Images */
+#blog img { max-width: 100%; height: auto; }
+
+/* Code / Preformatted text */
+#blog code, #blog pre { font-family: monospace; background: #f5f5f5; padding: 0.2em 0.4em; border-radius: 4px; }
+

@@ -40,7 +40,7 @@ const Blogs = async () => {
 
   await connectDB()
 
-  const res = await BlogSchema.find().lean().populate("category", "name")
+  const res = await BlogSchema.find().lean()
 
   const data = JSON.parse(JSON.stringify(res))
 
@@ -49,9 +49,9 @@ const Blogs = async () => {
     <main className="max-w-7xl mx-auto px-4 py-16">
       
       <div className="text-center mb-12 z-10">
-        <h2 className={`${playfair.className} text-4xl md:text-5xl font-semibold mb-4`}>
+        <h1 className={`${playfair.className} text-4xl md:text-5xl font-semibold mb-4`}>
           Our Journal
-        </h2>
+        </h1>
         <p className="max-w-2xl mx-auto">
           Thoughts on beauty, skincare, slow living, and all the little
           moments that make life softer.

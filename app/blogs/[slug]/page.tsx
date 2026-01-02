@@ -111,7 +111,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
             <p className='font-semibold text-sm'>{blog.category.name}</p>
-            <h2 className={`${playfair.className} capitalize text-5xl lg:text-6xl `}>{blog.title}</h2>
+            <h1 className={`${playfair.className} capitalize text-5xl lg:text-6xl `}>{blog.title}</h1>
           </div>
           <div className='flex mt-10 md:mt-0 flex-col gap-3'>
           <p>{publishAt}</p>
@@ -121,7 +121,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <Image priority fetchPriority='high' src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='w-full object-center object-contain h-full' />
       </section>
 
-      <article className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
+      <article id='blog' className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
         
       </article>
 
