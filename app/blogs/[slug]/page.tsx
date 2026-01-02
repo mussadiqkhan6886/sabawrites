@@ -118,7 +118,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
           <p className={`${playfair.className}`}>written by <span className='font-semibold text-xl'> Saba </span></p>
           </div>
         </div>
-        <Image priority src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='w-full object-center object-cover h-full' />
+        <Image priority fetchPriority='high' src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='w-full object-center object-contain h-full' />
       </section>
 
       <article className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
