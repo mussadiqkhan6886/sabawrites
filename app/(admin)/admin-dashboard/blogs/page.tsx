@@ -76,7 +76,7 @@ const BlogsPage = () => {
                 />
 
                 <div className=" bg-light/40 backdrop-blur-sm p-3 pb-0">
-                    <h3 className={`${playfair.className} text-center  text-2xl font-light line-clamp-2`}>
+                    <h3 className={`${playfair.className} text-center capitalize  text-2xl font-light line-clamp-2`}>
                     {blog.title}
                     </h3>
 

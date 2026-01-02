@@ -111,7 +111,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
             <p className='font-semibold text-sm'>{blog.category.name}</p>
-            <h2 className={`${playfair.className} text-5xl lg:text-6xl `}>{blog.title}</h2>
+            <h2 className={`${playfair.className} capitalize text-5xl lg:text-6xl `}>{blog.title}</h2>
           </div>
           <div className='flex mt-10 md:mt-0 flex-col gap-3'>
           <p>{publishAt}</p>
