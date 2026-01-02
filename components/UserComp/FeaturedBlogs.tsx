@@ -18,7 +18,7 @@ const FeaturedBlogs = async () => {
   return (
     <section  className='py-20 max-w-7xl mx-auto relative'>
       <SectionTitle firstWord='What I&apos;m Currently' secondWord='Obsessing Over' />
-      <p className="text-center mb-7">From viral makeup products to skincare everyone swears by, these are the blogs where i talk about what the internet can&apos;t stop obsessing over. <br /> Consider this my running beauty wishlist</p>
+      <p className="text-center mb-7 px-3">From viral makeup products to skincare everyone swears by, these are the blogs where i talk about what the internet can&apos;t stop obsessing over. <br /> Consider this my running beauty wishlist</p>
       <div>
         <Featured blogs={data} />
       </div>

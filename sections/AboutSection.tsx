@@ -6,7 +6,7 @@ import React from 'react'
 
 const AboutSection = () => {
   return (
-    <section className="max-w-7xl h-[70vh] mx-auto flex items-center justify-center flex-col overflow-hidden">
+    <section className="max-w-7xl h-[70vh] px-3 mx-auto flex items-center justify-center flex-col overflow-hidden">
       
       {/* Title */}
       <motion.div
