@@ -76,8 +76,8 @@ export default function BlogEditor() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-4">
-      <h2 className="text-center text-3xl font-semibold">Add Blog</h2>
+    <main className="max-w-5xl mx-auto p-6 space-y-4 md:pl-50">
+      <h1 className="text-center text-3xl font-semibold">Add Blog</h1>
       <input
         className="w-full border p-3 text-lg"
         placeholder="Blog Title"
@@ -169,6 +169,6 @@ export default function BlogEditor() {
       >
         {loading ? "Loading..." : "Save Blog"}
       </button>
-    </div>
+    </main>
   );
 }

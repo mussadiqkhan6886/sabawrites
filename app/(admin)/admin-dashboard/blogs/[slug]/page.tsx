@@ -85,7 +85,7 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
   if (loading) return <div className="text-center mt-20 h-screen">Loading...</div>;
 
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-4">
+    <main className="max-w-5xl mx-auto p-6 space-y-4 md:pl-50">
       <div>
         <label className="block font-semibold mb-1">Title</label>
         <input
@@ -184,7 +184,7 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
       >
         {saving ? "Saving..." : "Update Blog"}
       </button>
-    </div>
+    </main>
   );
 };
 
