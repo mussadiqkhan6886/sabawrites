@@ -8,7 +8,6 @@ interface FeaturedBlogCardProps {
   slug: string;
   excerpt: string;
   coverImage: string;
-  category: string;
   publishedAt: string;
   readTime: string;
   reverse?: boolean; // new prop to alternate layout
@@ -19,7 +18,6 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
   slug,
   excerpt,
   coverImage,
-  category,
   publishedAt,
   readTime,
   reverse = false,
@@ -32,8 +30,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
           <>
             {/* Details First */}
             <div className="p-5 order-1 bg-light/40 backdrop-blur-sm">
-              <span className="text-sm text-dark font-semibold">{category}</span>
-              <h3 className={`${playfair.className} mt-2 text-2xl font-light line-clamp-2`}>
+              <h3 className={`${playfair.className} capitalize mt-2 text-2xl font-light line-clamp-2`}>
                 {title}
               </h3>
               <p className="mt-2  text-sm line-clamp-3">
@@ -73,8 +70,7 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
 
             {/* Details Second */}
             <div className="p-5 order-2 bg-light/40 backdrop-blur-sm">
-              <span className="text-sm text-dark font-semibold">{category}</span>
-              <h3 className={`${playfair.className} mt-2 text-2xl font-light line-clamp-2`}>
+              <h3 className={`${playfair.className} capitalize mt-2 text-2xl font-light line-clamp-2`}>
                 {title}
               </h3>
               <p className="mt-2  text-sm line-clamp-3">

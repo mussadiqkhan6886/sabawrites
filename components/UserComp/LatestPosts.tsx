@@ -1,7 +1,6 @@
 import React from 'react'
 import SectionTitle from './SectionTitle'
 import Latest from './Latest'
-import { blogs } from '@/lib/constants'
 import { connectDB } from '@/lib/database'
 import BlogSchema from '@/lib/schema/BlogSchema'
 

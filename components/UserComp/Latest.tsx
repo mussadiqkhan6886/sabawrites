@@ -11,6 +11,7 @@ import "swiper/css/navigation"
 import Image from 'next/image';
 import Link from 'next/link';
 import { playfair } from '@/lib/fonts/font';
+import BlogCard from './BlogCard';
 
 const Latest = ({data}: {data: Blog[]}) => {
 
@@ -40,31 +41,7 @@ const Latest = ({data}: {data: Blog[]}) => {
       >
         {data.map((blog, index) => (
           <SwiperSlide key={blog._id}>
-            <Link href={`/blogs/${blog.slug}`} className="relative xl:h-[92vh] flex  flex-col">
-
-              <Image
-                width={400} height={400}
-                src={blog.coverImage}
-                alt={blog.title}
-                className="w-full h-108 object-cover"
-              />
-
-            <div className='p-8 h-full bg-light/40 backdrop-blur-sm'>
-               
-
-                <h3 className={`${playfair.className} text-center text-xl sm:text-2xl font-semibold mt-2`}>
-                    {blog.title}
-                </h3>
-
-               <p className="text-sm text-center mt-2">
-                {blog.excerpt
-                  ? blog.excerpt.length > 80
-                    ? `${blog.excerpt.slice(0, 80)}...`
-                    : blog.excerpt
-                  : ""}
-              </p>
-              </div>
-            </Link>
+            <BlogCard {...blog} />
           </SwiperSlide>
         ))}
       </Swiper>

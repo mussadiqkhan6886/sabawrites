@@ -85,7 +85,6 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
   const collection = await BlogSchema.aggregate([
     {
       $match: {
-        category: blog.category._id,
         slug: { $ne: blog.slug }
       }
     },
@@ -110,8 +109,8 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
       <section className='flex flex-col-reverse lg:flex-row bg-medium lg:h-screen '>
         <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
-            <p className='font-semibold text-sm'>{blog.category.name}</p>
             <h1 className={`${playfair.className} capitalize text-5xl lg:text-6xl `}>{blog.title}</h1>
+            <p className='font-light text-md'>{blog.excerpt}</p>
           </div>
           <div className='flex mt-10 md:mt-0 flex-col gap-3'>
           <p>{publishAt}</p>
@@ -127,7 +126,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
       <hr />
       <section className='max-w-7xl mx-auto'>
-        <h2 className={`${playfair.className} text-center text-2xl sm:text-3xl py-10`}>More Related Stories About {blog.category?.name}</h2>
+        <h2 className={`${playfair.className} text-center text-2xl sm:text-3xl py-10`}>More Related Stories</h2>
         {collections.length > 0 ? <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4'>
           {collections.map((item: Blog) => (
             <BlogCard key={item._id} {...item} />
