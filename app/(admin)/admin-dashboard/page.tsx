@@ -65,7 +65,6 @@ export default function BlogEditor() {
       setTitle("")
       setExcerpt("")
       setCoverImage(null)
-      setCategory("")
       setReadTime("")
       setFeatured(false)
       setContent("")
