@@ -18,7 +18,7 @@ const Home = () => {
       <FeaturedBlogs />
       <LatestPosts />
       <Blogs />
-      <Categories />
+      {/* <Categories /> */}
       {/* <Gallery /> */}
       {/* <Quote /> */}
     </main>

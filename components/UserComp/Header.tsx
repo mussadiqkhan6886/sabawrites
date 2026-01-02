@@ -16,7 +16,7 @@ const Header = () => {
 
     if(pathname.includes("/admin-dashboard")){
       return <header className="bg-medium w-full">
-        <nav className='flex justify-evenly py-4'>
+        <nav className='flex flex-wrap gap-3 justify-evenly py-4'>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard/category"}><FaColumns /> <span>Category</span></Link>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard/blogs"}><FaFile /> <span>Blogs</span></Link>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard"}><FaPlusCircle /> <span>Add Blog</span></Link>
