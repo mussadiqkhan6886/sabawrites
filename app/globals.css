@@ -43,7 +43,8 @@ body{
 
 #blog {
   line-height: 1.6;
-  color: #222;
+  color: #000000;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Headings */
@@ -57,8 +58,7 @@ body{
 /* Paragraphs */
 #blog p { font-size: 1rem; margin: 0.5em 0; }
 #blog p,
-#blog li,
-#blog blockquote {
+#blog li{
   text-align: justify;
   text-justify: inter-word;
 }
@@ -75,6 +75,32 @@ body{
 /* Images */
 #blog img { max-width: 100%; height: auto; }
 
+#blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+#blog th,
+#blog td {
+  border: 1px solid #bebfc2;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+#blog th {
+  background: #c1c2c4;
+  font-weight: 600;
+}
+
+
 /* Code / Preformatted text */
 #blog code, #blog pre { font-family: monospace; background: #f5f5f5; padding: 0.2em 0.4em; border-radius: 4px; }
 
+#blog blockquote {
+  border-left: 4px solid #e5e7eb;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #374151;
+}

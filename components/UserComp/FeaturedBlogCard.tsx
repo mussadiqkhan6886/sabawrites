@@ -30,10 +30,10 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
           <>
             {/* Details First */}
             <div className="p-5 order-1 bg-light/40 backdrop-blur-sm">
-              <h3 className={`${playfair.className} capitalize mt-2 text-2xl font-light line-clamp-2`}>
+              <h3 className={`${playfair.className} text-center capitalize mt-2 text-2xl font-light line-clamp-2`}>
                 {title}
               </h3>
-              <p className="mt-2  text-sm line-clamp-3">
+              <p className="mt-2 text-center text-sm line-clamp-3">
                 {excerpt
                   ? excerpt.length > 80
                     ? `${excerpt.slice(0, 80)}...`
@@ -70,10 +70,10 @@ const FeaturedBlogCard: React.FC<FeaturedBlogCardProps> = ({
 
             {/* Details Second */}
             <div className="p-5 order-2 bg-light/40 backdrop-blur-sm">
-              <h3 className={`${playfair.className} capitalize mt-2 text-2xl font-light line-clamp-2`}>
+              <h3 className={`${playfair.className} text-center capitalize mt-2 text-2xl font-light line-clamp-2`}>
                 {title}
               </h3>
-              <p className="mt-2  text-sm line-clamp-3">
+              <p className="mt-2 text-center text-sm line-clamp-3">
                 {excerpt
                   ? excerpt.length > 80
                     ? `${excerpt.slice(0, 80)}...`

@@ -13,22 +13,23 @@ interface Props {
 const BlogCard = ({slug, coverImage, title, excerpt}: Props) => {
   return (
     <Link href={`/blogs/${slug}`} className="h-full block">
+
+      <div className="relative h-110">
         <Image
-        width={200}
-        height={200}
+        fill
         src={coverImage}
         alt={excerpt}
-        className="h-[400px] w-full object-cover"
+        className="object-cover"
         />
+      </div>
 
-        <div className=" bg-light/40 backdrop-blur-sm p-3">
+      <div className=" bg-light/40 backdrop-blur-sm p-3">
         <h3 className={`${playfair.className} capitalize text-center  text-2xl font-light line-clamp-2`}>
         {title}
         </h3>
 
         <p className="text-gray-900 text-[13px] mt-4 text-center">{excerpt.length >= 8 ? excerpt.slice(0,80) + "..." : excerpt}</p>
-
-        </div>
+      </div>
     </Link>
   )
 }

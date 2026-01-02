@@ -109,17 +109,17 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <div className='w-full p-20 pb-10 flex justify-between flex-col'>
           <div>
             <h1 className={`${playfair.className} capitalize text-5xl lg:text-6xl `}>{blog.title}</h1>
-            <p className='font-light text-md'>{blog.excerpt}</p>
+            <p className='font-light py-2 text-md'>{blog.excerpt}</p>
           </div>
           <div className='flex mt-10 md:mt-0 flex-col gap-3'>
           <p>{publishAt}</p>
           <p className={`${playfair.className}`}>written by <span className='font-semibold text-xl'> Saba </span></p>
           </div>
         </div>
-        <Image priority fetchPriority='high' src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='w-full object-center object-contain h-full' />
+        <Image priority fetchPriority='high' src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='max-w-180 w-full object-center object-cover h-full' />
       </section>
 
-      <article id='blog' className='prose max-w-4xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
+      <article id='blog' className='prose text-black max-w-5xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
         
       </article>
 
