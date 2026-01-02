@@ -7,7 +7,8 @@ import { FaFacebook, FaInstagram, FaPinterest } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer style={{backgroundImage: `URL(${"/footer.jpg"})`, backgroundPosition: "bottom", backgroundSize:"cover"}} className="text-gray-800  mt-12 relative">
+    // style={{backgroundImage: `URL(${"/footer.jpg"})`, backgroundPosition: "bottom", backgroundSize:"cover"}}
+    <footer className="text-gray-800 bg-white  mt-12 relative">
       <div className="absolute inset-0 w-full h-full bg-white/40" />
       <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid grid-cols-1 sm:grid-cols-2  gap-8">
         {/* Brand */}
