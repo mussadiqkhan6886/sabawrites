@@ -12,7 +12,7 @@ const Blogs = async () => {
 
   await connectDB()
 
-  const res = await BlogSchema.find({}).limit(10).lean().populate("category", "name")
+  const res = await BlogSchema.find({}).limit(10).lean()
 
   const data = JSON.parse(JSON.stringify(res)) 
 

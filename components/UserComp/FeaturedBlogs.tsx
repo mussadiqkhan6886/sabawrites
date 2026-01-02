@@ -12,7 +12,7 @@ const FeaturedBlogs = async () => {
 
   await connectDB()
 
-  const res = await BlogSchema.find({featured: true}).lean().populate("category", "name")
+  const res = await BlogSchema.find({featured: true}).lean()
 
   const data = JSON.parse(JSON.stringify(res))
 

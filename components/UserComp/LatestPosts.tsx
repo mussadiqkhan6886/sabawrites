@@ -14,7 +14,7 @@ const LatestPosts = async () => {
    const oneWeekAgo = new Date()
    oneWeekAgo.setDate(oneWeekAgo.getDate() - 7)
   
-  const res = await BlogSchema.find({createdAt: { $gte : oneWeekAgo}}).sort({createdAt: -1}).lean().populate("category", "name")
+  const res = await BlogSchema.find({createdAt: { $gte : oneWeekAgo}}).sort({createdAt: -1}).lean()
   const data = JSON.parse(JSON.stringify(res))
 
 
