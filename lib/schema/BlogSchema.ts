@@ -3,12 +3,11 @@ import mongoose, { Schema, Document } from "mongoose";
 export interface IBlog extends Document {
   title: string;
   slug: string;
-  content: string; // HTML from TinyMCE
+  content: string;
   coverImage: string;
   createdAt: Date;
   updatedAt: Date;
   excerpt: string;
-  category:  mongoose.Types.ObjectId;
   readTime: string;
   featured: boolean
 }
@@ -20,11 +19,6 @@ const BlogSchema = new Schema<IBlog>(
     content: { type: String, required: true },
     coverImage: { type: String, required: true },
     excerpt: {type: String, required: true},
-    category: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Category",
-      required: true,
-    },
     readTime: {type: String, required: true},
     featured: {type: Boolean, required: true},
   },
