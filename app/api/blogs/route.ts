@@ -32,7 +32,7 @@ export async function POST(req: Request) {
 export async function GET() {
   try {
     await connectDB();
-    const blogs = await BlogSchema.find().sort({ createdAt: -1 }).populate("category", "name");
+    const blogs = await BlogSchema.find().sort({ createdAt: -1 });
     return NextResponse.json(blogs);
   } catch (err) {
     console.error(err);

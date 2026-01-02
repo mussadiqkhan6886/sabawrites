@@ -6,7 +6,6 @@ interface Params {
   params: Promise<{ slug: string }>;
 }
 
-// Get single blog by slug
 export async function GET(req: Request, { params }: Params) {
   await connectDB();
   const { slug } = await params;
@@ -15,7 +14,7 @@ export async function GET(req: Request, { params }: Params) {
     return NextResponse.json({ success: false, message: "Slug required" }, { status: 400 });
 
   try {
-    const blog = await BlogSchema.findOne({ slug }).populate("category", "name");
+    const blog = await BlogSchema.findOne({ slug });
     if (!blog)
       return NextResponse.json({ success: false, message: "Blog not found" }, { status: 404 });
 
@@ -26,7 +25,6 @@ export async function GET(req: Request, { params }: Params) {
   }
 }
 
-// Update blog by slug
 export async function PUT(req: Request, { params }: Params) {
   await connectDB();
   const { slug } = await params;

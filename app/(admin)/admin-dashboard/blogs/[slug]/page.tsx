@@ -84,7 +84,7 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     }
   };
 
-  if (loading) return <div className="text-center mt-20">Loading...</div>;
+  if (loading) return <div className="text-center mt-20 h-screen">Loading...</div>;
 
   return (
     <div className="max-w-5xl mx-auto p-6 space-y-4">
@@ -109,28 +109,6 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
           className="w-full border p-3"
         />
       </div>
-
-      {/* <div>
-        <label className="block font-semibold mb-1">Category</label>
-
-        <select
-          value={blog.category?._id || ""}
-          onChange={(e) =>
-            setBlog({ ...blog, category: e.target.value })
-          }
-          className="w-full border p-3"
-        >
-          <option value="">Select category</option>
-
-          {categories.map((cat) => (
-            <option key={cat._id} value={cat._id}>
-              {cat.name}
-            </option>
-          ))}
-        </select>
-      </div> */}
-
-
       <div>
         <label className="block font-semibold mb-1">Read Time</label>
         <input

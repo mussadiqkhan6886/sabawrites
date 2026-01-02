@@ -17,7 +17,6 @@ export default function BlogEditor() {
   const [featured, setFeatured] = useState(false);
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false)
-  const [categories, setCategories] = useState<Category[] | null>(null)
 
   const uploadCoverImage = async (): Promise<string | null> => {
     if (!coverImage) return null;
