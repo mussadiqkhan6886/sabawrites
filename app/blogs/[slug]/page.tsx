@@ -81,7 +81,6 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
   const blog = JSON.parse(JSON.stringify(res))
 
-  console.log(blog)
   const collection = await BlogSchema.aggregate([
     {
       $match: {
@@ -108,7 +107,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
   return (
     <main>
       <section className='flex flex-col-reverse lg:flex-row bg-medium lg:h-screen '>
-        <div className='w-full p-20 pb-10 flex justify-between flex-col'>
+        <div className='w-full p-15 sm:p-20 pb-10 flex justify-between flex-col'>
           <div>
             <h1 className={`${playfair.className} capitalize text-5xl lg:text-6xl `}>{blog.title}</h1>
             <p className='font-light py-2 text-md'>{blog.excerpt}</p>
@@ -121,12 +120,12 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
         <Image priority fetchPriority='high' src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='max-w-180 w-full object-center object-cover h-full' />
       </section>
 
-      <article id='blog' className='prose text-black max-w-5xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-5 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
+      <article id='blog' className='prose text-black max-w-5xl mx-auto xl:px-40 lg:px-30 md:px-20 sm:px-10 px-4 py-10 ' dangerouslySetInnerHTML={{ __html: blog.content || "" }}>
         
       </article>
 
       <hr />
-      <section className='max-w-7xl mx-auto'>
+      <section className='max-w-7xl mx-auto px-4'>
         <h2 className={`${playfair.className} text-center text-2xl sm:text-3xl py-10`}>More Related Stories</h2>
         {collections.length > 0 ? <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4'>
           {collections.map((item: Blog) => (
