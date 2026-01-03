@@ -10,6 +10,7 @@ export interface IBlog extends Document {
   excerpt: string;
   readTime: string;
   featured: boolean
+  keywords: string[]
 }
 
 const BlogSchema = new Schema<IBlog>(
@@ -21,6 +22,7 @@ const BlogSchema = new Schema<IBlog>(
     excerpt: {type: String, required: true},
     readTime: {type: String, required: true},
     featured: {type: Boolean, required: true},
+    keywords: {type: [String], required: true},
   },
   { timestamps: true }
 );

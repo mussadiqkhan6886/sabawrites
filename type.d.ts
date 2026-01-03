@@ -11,6 +11,7 @@ export interface Blog {
   readTime: string;
   featured: boolean;
   content: string;
+  keywords: string[]
   createdAt: string;
 }
 

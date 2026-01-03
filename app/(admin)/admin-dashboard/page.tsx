@@ -17,6 +17,12 @@ export default function BlogEditor() {
   const [featured, setFeatured] = useState(false);
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false)
+  const [slug, setSlug] = useState("")
+  const [keywords, setKeywords] = useState<string[] | []>([])
+
+  useEffect(() => {
+    setSlug(title.toLowerCase().replace(/\s+/g, "-"))
+  }, [title])
 
   const uploadCoverImage = async (): Promise<string | null> => {
     if (!coverImage) return null;
@@ -47,7 +53,7 @@ export default function BlogEditor() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           title,
-          slug: title.toLowerCase().replace(/\s+/g, "-"),
+          slug,
           excerpt,
           coverImage: coverUrl,
           readTime,
@@ -76,7 +82,7 @@ export default function BlogEditor() {
   };
 
   return (
-    <main className="max-w-5xl mx-auto p-6 space-y-4 md:pl-50">
+    <main className=" p-6 space-y-4 md:pl-50 xl:pl-50 w-full">
       <h1 className="text-center text-3xl font-semibold">Add Blog</h1>
       <input
         className="w-full border p-3 text-lg"
@@ -102,14 +108,31 @@ export default function BlogEditor() {
           />
         </label>
 
-        <input
-          className="border p-2"
-          type="text"
-          placeholder="Read Time (e.g., 5 min)"
-          value={readTime}
-          onChange={(e) => setReadTime(e.target.value)}
-        />
+        <div className="flex justify-between gap-10">
+          <input
+            className="border p-2"
+            type="text"
+            placeholder="Read Time (e.g., 5 min)"
+            value={readTime}
+            onChange={(e) => setReadTime(e.target.value)}
+          />
 
+          <input
+            className="border p-2 w-full"
+            type="text"
+            placeholder="Slug"
+            value={slug}
+            onChange={(e) => setSlug(e.target.value)}
+          />
+        </div>
+
+          <input
+            className="border p-2"
+            type="text"
+            placeholder="Keywords (separated by comma)"
+            value={keywords}
+            onChange={(e) => setKeywords([...keywords, e.target.value.split(",").join("")])}
+          />
         <div className="flex items-center mt-2 space-x-2">
           <span>Featured:</span>
           <label>
@@ -140,10 +163,10 @@ export default function BlogEditor() {
         init={{
           height: 500,
           menubar: true,
-          plugins: "image link lists code",
+          plugins: "image link lists code anchor autolink charmap codesample emoticons link lists media searchreplace table visualblocks wordcount ",
           toolbar:
             "undo redo | blocks | bold italic underline | " +
-            "alignleft aligncenter alignright | bullist numlist | image link | code",
+            "alignleft aligncenter alignright alignjustify | bullist numlist | image link | code | blocks fontfamily fontsize | link media table mergetags | align lineheight | ",
           images_upload_handler: async (blobInfo: any) => {
              const file = blobInfo.blob();
             const compressedFile = await imageCompression(file, {

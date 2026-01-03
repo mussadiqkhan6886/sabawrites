@@ -19,7 +19,7 @@ const Hero = () => {
         priority
       />
 
-      <div className='sm:bg-light p-9 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[100px] sm:-translate-y-1/2 max-w-2xl text-center rounded sm:shadow-lg w-full'>
+      <div className='sm:bg-light p-9 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-50 sm:-translate-y-1/2 max-w-2xl text-center rounded sm:shadow-lg w-full'>
 
         <h1 className={`${playfair.className} text-white px-4 leading-12 sm:text-black font-semibold text-4xl mb-4`}>
           Beauty I&apos;m obsessed with but haven&apos;t bought yet.
