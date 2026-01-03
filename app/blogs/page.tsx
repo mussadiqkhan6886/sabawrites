@@ -33,6 +33,14 @@ export const metadata: Metadata = {
     description:
       "Thoughts on beauty, skincare, slow living, and all the little moments that make life softer.",
     type: "website",
+    images: [
+      {
+        url: "flower-4.png",
+        alt: "Flower image",
+        width: 1200,
+        height: 630,
+      }
+    ]
   },
 }
 
