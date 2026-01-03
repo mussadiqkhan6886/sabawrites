@@ -13,16 +13,44 @@ export default function BlogEditor() {
   const [title, setTitle] = useState("");
   const [excerpt, setExcerpt] = useState("");
   const [coverImage, setCoverImage] = useState<File | null>(null);
-  const [readTime, setReadTime] = useState("");
   const [featured, setFeatured] = useState(false);
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false)
   const [slug, setSlug] = useState("")
   const [keywords, setKeywords] = useState<string[] | []>([])
+  const [isSlugEdited, setIsSlugEdited] = useState(false);
+  const [input, setInput] = useState("")
 
-  useEffect(() => {
-    setSlug(title.toLowerCase().replace(/\s+/g, "-"))
-  }, [title])
+  const isDisabled =
+    loading ||
+    !title.trim() ||
+    !slug.trim() ||
+    !content.trim();
+
+
+   useEffect(() => {
+    if (!title || isSlugEdited) return;
+
+    const slugify = (text: string) =>
+      text
+        .toLowerCase()
+        .trim()
+        .replace(/&/g, "and")
+        .replace(/[^\w\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+    setSlug(slugify(title));
+  }, [title, isSlugEdited]);
+
+  const calculateReadTime = (text: string) => {
+    const words = text.replace(/<[^>]+>/g, "").split(/\s+/).length;
+    const minutes = Math.ceil(words / 200);
+    return `${minutes} min read`;
+  };
+
+  const finalReadTime = calculateReadTime(content);
 
   const uploadCoverImage = async (): Promise<string | null> => {
     if (!coverImage) return null;
@@ -56,9 +84,10 @@ export default function BlogEditor() {
           slug,
           excerpt,
           coverImage: coverUrl,
-          readTime,
+          readTime: finalReadTime,
           featured,
           content,
+          keywords
         }),
       });
 
@@ -70,9 +99,10 @@ export default function BlogEditor() {
       setTitle("")
       setExcerpt("")
       setCoverImage(null)
-      setReadTime("")
       setFeatured(false)
       setContent("")
+      setSlug("")
+      setKeywords([""])
     } catch (err) {
       console.error(err);
       alert("Something went wrong");
@@ -110,19 +140,19 @@ export default function BlogEditor() {
 
         <div className="flex justify-between gap-10">
           <input
-            className="border p-2"
-            type="text"
-            placeholder="Read Time (e.g., 5 min)"
-            value={readTime}
-            onChange={(e) => setReadTime(e.target.value)}
-          />
-
-          <input
             className="border p-2 w-full"
             type="text"
             placeholder="Slug"
             value={slug}
-            onChange={(e) => setSlug(e.target.value)}
+            onChange={(e) => {
+              setSlug(
+                e.target.value
+                  .toLowerCase()
+                  .trim()
+                  .replace(/\s+/g, "-")
+              );
+              setIsSlugEdited(true);
+            }}
           />
         </div>
 
@@ -130,8 +160,14 @@ export default function BlogEditor() {
             className="border p-2"
             type="text"
             placeholder="Keywords (separated by comma)"
-            value={keywords}
-            onChange={(e) => setKeywords([...keywords, e.target.value.split(",").join("")])}
+            value={input}
+            onChange={(e) => {
+            const value = e.target.value;
+            setInput(value);
+            setKeywords(
+              value.split(",").map(k => k.trim()).filter(Boolean)
+            );
+          }}
           />
         <div className="flex items-center mt-2 space-x-2">
           <span>Featured:</span>
@@ -163,10 +199,10 @@ export default function BlogEditor() {
         init={{
           height: 500,
           menubar: true,
-          plugins: "image link lists code anchor autolink charmap codesample emoticons link lists media searchreplace table visualblocks wordcount ",
+          plugins: "image link lists code anchor autolink charmap codesample emoticons media searchreplace table visualblocks wordcount ",
           toolbar:
             "undo redo | blocks | bold italic underline | " +
-            "alignleft aligncenter alignright alignjustify | bullist numlist | image link | code | blocks fontfamily fontsize | link media table mergetags | align lineheight | ",
+            "alignleft aligncenter alignright alignjustify | bullist numlist | image link | code | fontfamily fontsize | table mergetags | lineheight | ",
           images_upload_handler: async (blobInfo: any) => {
              const file = blobInfo.blob();
             const compressedFile = await imageCompression(file, {
@@ -188,6 +224,7 @@ export default function BlogEditor() {
 
       <button
         onClick={saveBlog}
+        disabled={isDisabled}
         className="mt-4 bg-black text-white px-6 py-2 rounded"
       >
         {loading ? "Loading..." : "Save Blog"}

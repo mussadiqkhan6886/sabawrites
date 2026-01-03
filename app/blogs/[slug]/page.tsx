@@ -33,7 +33,7 @@ export async function generateMetadata(
   return {
     title: `${formattedSlug}`,
     description: blog.excerpt || `Read the latest ${formattedSlug} blog on Saba Writes.`,
-
+    keywords: blog.keywords,
     openGraph: {
       title: `${formattedSlug} | Saba Writes`,
       description: blog.excerpt || `Explore ${formattedSlug} blog curated by Saba.`,
@@ -81,6 +81,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
 
   const blog = JSON.parse(JSON.stringify(res))
 
+  console.log(blog)
   const collection = await BlogSchema.aggregate([
     {
       $match: {
@@ -102,6 +103,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
   }
 
   const publishAt = new Date(blog.createdAt).toLocaleDateString();
+
 
   return (
     <main>

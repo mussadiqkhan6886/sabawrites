@@ -19,7 +19,6 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
 
-  // Fetch blog by slug
   useEffect(() => {
     const fetchBlog = async () => {
       try {
@@ -59,10 +58,6 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
     setBlog({ ...blog, coverImage: "" });
   };
 
-  useEffect(() => {
-    setBlog({...blog, slug: blog.title!?.toLowerCase().replace(/\s+/g, "-")})
-  }, [blog.slug, blog.title])
-
   const handleSave = async () => {
     try {
       setSaving(true);
@@ -81,6 +76,30 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
       setSaving(false);
     }
   };
+
+   useEffect(() => {
+      if (!blog.title) return;
+
+      const slugify = (text: string) =>
+        text
+          .toLowerCase()
+          .trim()
+          .replace(/&/g, "and")
+          .replace(/[^\w\s-]/g, "")
+          .replace(/\s+/g, "-")
+          .replace(/-+/g, "-")
+          .replace(/^-+|-+$/g, "");
+
+      const newSlug = slugify(blog.title);
+
+      setBlog(prev =>
+        prev.slug === newSlug ? prev : { ...prev, slug: newSlug }
+      );
+    }, [blog.title]);
+
+    const isDisabled =
+  saving || !blog.title || !blog.content || !blog.slug;
+
 
   if (loading) return <div className="text-center mt-20 h-screen">Loading...</div>;
 
@@ -107,17 +126,53 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
           className="w-full border p-3"
         />
       </div>
-      <div>
-        <label className="block font-semibold mb-1">Read Time</label>
-        <input
-          type="text"
-          placeholder="Read Time"
-          value={blog.readTime || ""}
-          onChange={(e) => setBlog({ ...blog, readTime: e.target.value })}
-          className="w-full border p-3"
-        />
+
+      <div className="flex gap-10">
+        <div>
+          <label className="block font-semibold mb-1">Read Time</label>
+          <input
+            type="text"
+            placeholder="Read Time"
+            value={blog.readTime || ""}
+            onChange={(e) => setBlog({ ...blog, readTime: e.target.value })}
+            className="w-full border p-3"
+          />
+        </div>
+        <div className="w-full">
+          <label className="block font-semibold mb-1">Slug</label>
+          <input
+            className="border p-2 w-full"
+            type="text"
+            placeholder="Slug"
+            value={blog.slug || ""}
+            onChange={(e) =>
+              setBlog({
+                ...blog,
+                slug: e.target.value
+                  .toLowerCase()
+                  .trim()
+                  .replace(/\s+/g, "-"),
+              })
+            }
+          />
+        </div>
       </div>
 
+       <input
+        className="border p-2 w-full"
+        type="text"
+        placeholder="Keywords (comma separated)"
+        value={blog.keywords?.join(", ") || ""}
+        onChange={(e) =>
+          setBlog({
+            ...blog,
+            keywords: e.target.value
+              .split(",")
+              .map(k => k.trim())
+              .filter(Boolean),
+          })
+        }
+      />
       <div className="flex items-center space-x-2">
         <label className="font-semibold">Featured:</label>
         <input
@@ -163,9 +218,9 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
           init={{
             height: 400,
             menubar: true,
-            plugins: "image link lists code",
+            plugins: "image link lists code anchor autolink charmap codesample emoticons media searchreplace table visualblocks wordcount",
             toolbar:
-              "undo redo | blocks | bold italic underline | alignleft aligncenter alignright | bullist numlist | image link | code",
+              "undo redo | blocks | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist | image link | code | fontfamily fontsize | table mergetags | lineheight |",
             images_upload_handler: async (blobInfo: any) => {
               const formData = new FormData();
               formData.append("file", blobInfo.blob());
@@ -180,7 +235,7 @@ const EditBlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
       <button
         onClick={handleSave}
         className="bg-black text-white px-6 py-2 rounded"
-        disabled={saving}
+         disabled={isDisabled}
       >
         {saving ? "Saving..." : "Update Blog"}
       </button>

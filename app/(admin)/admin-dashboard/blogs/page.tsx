@@ -66,6 +66,7 @@ const BlogsPage = () => {
         <div key={blog._id} className="max-h-[540px]">
             <Link href={`/admin-dashboard/blogs/${blog.slug}`} className="h-full block">
                 <Image
+                  unoptimized
                     width={200}
                     height={200}
                     src={blog.coverImage}
