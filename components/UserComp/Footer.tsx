@@ -18,16 +18,17 @@ export default function Footer() {
   
   return (
     <footer className="text-gray-800 bg-white  mt-12 relative">
-      <div className="max-w-7xl z-40 mx-auto px-6 py-12 grid place-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <div className="space-y-4 z-30 relative">
+        <div className="space-y-4 relative">
           <h6 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h6>
           <p className="text-black">
             A lifestyle & beauty blog celebrating elegance, wellness, and feminine energy.
           </p>
         </div>
 
-        <div className="flex flex-col space-y-3 mt-2 z-30">
+        
+        <div className="flex flex-col items-center space-y-3 mt-2 mb-10">
           <h6 className="text-lg font-semibold mb-4">Social Links</h6>
           <div className="flex gap-6">
             <Link className="text-2xl" aria-label="instagram link" href={"#"}><FaInstagram name="instagram" aria-label="instagram" /></Link>
@@ -36,8 +37,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex gap-3 flex-col">
-          <h6 className="text-lg font-semibold mb-4">Quick Links</h6>
+        <div className="flex gap-3 items-center flex-col">
+          <h6 className="text-lg font-semibold">Quick Links</h6>
           <Link href={"/privacy-policy"}>Privacy Policy</Link>
           <Link href={"/terms-and-condition"}>Terms And Condition</Link>
           <Link href={"/disclaimer"}>Disclaimer</Link>
