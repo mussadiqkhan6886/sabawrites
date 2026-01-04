@@ -38,7 +38,7 @@ const Header = () => {
       </div>
 
       <Link href={"/"}>
-        <h1 className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></h1>
+        <p className={`${playfair.className} text-[27px] sm:text-4xl`}>Saba <span className='italic font-semibold'>Writes</span></p>
       </Link>
 
       <button className={`${playfair.className} bg-dark text-sm sm:text-base text-light px-4 py-2 rounded-full cursor-pointer hover:bg-main transition`}>
