@@ -5,6 +5,7 @@ import BlogSchema from '@/lib/schema/BlogSchema'
 import { Blog } from '@/type'
 import { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export const revalidate = 60
@@ -114,7 +115,7 @@ const SingleBlog = async ({params}: {params: Promise<{slug: string}>}) => {
           </div>
           <div className='flex mt-10 md:mt-0 flex-col gap-3'>
           <p>{publishAt}</p>
-          <p className={`${playfair.className}`}>written by <span className='font-semibold text-xl'> Saba </span></p>
+          <p className={`${playfair.className}`}>written by <span className='font-semibold text-xl'> <Link className="underline italic" href="/about-me">Saba </Link></span></p>
           </div>
         </div>
         <Image priority fetchPriority='high' src={blog.coverImage} alt={blog.excerpt} width={1000} height={1000} className='max-w-180 w-full object-center object-cover h-full' />
