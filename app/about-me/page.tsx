@@ -60,38 +60,45 @@ export default function About() {
         />
 
         <p>
-          That’s me, the girl who on one hand easily spends hours watching skincare
-          TikTok videos, putting 10 items into her Amazon cart, and then
-          contemplating for another hour which item she really needs.
+          That’s me, the girl who can spend hours watching skincare TikToks, adding ten products to her Amazon cart, and then debating which one she actually needs
+          (most of the time, all of them).
+
         </p>
 
         <p className="mt-4">
-          During the day, I am a part-time content writer who mostly types words
-          that (hopefully) have some sense, and during the night, I usually get
-          overwhelmed with skincare and makeup reviews.
+          Beauty, skincare, and makeup have always been more than a casual interest for me. They are routines, comforts, and little things that make everyday life feel better.
         </p>
 
         <p className="mt-4">
-          This tiny bit of the web is where I feel happiest, a place of my beauty,
-          skincare, and all the little things that give us that good feeling in
-          our own skin.
+         I closely follow makeup artists, skincare creators, and beauty influencers to stay updated on new launches, viral products, and trends that are genuinely worth the hype. Many of the things you see here are part of my real wishlist, items I plan to buy, or products recommended by influencers and professionals I truly trust.
         </p>
 
         <p className="mt-4">
-          At times, I think of myself as the present-day narrator of the
-          Bridgerton series — only instead of gossip, I share intel on lip masks,
-          highlighters, and moisturizers.
+         I have also worked closely with a beauty salon, where I handled high end makeup and skincare products on a daily basis. Using luxury and professional grade products on clients gave me hands on experience with textures, finishes, and real performance, even when those products were too expensive for me to buy myself.
         </p>
 
+        <p>That is where Saba Writes began.</p>
+
         <p className="mt-4">
-          In case you are a fan of glowy skin, soft vibes, truthful talk, and the
-          rare “I found this on Amazon at 2 a.m.” incident, then you are at the
-          perfect place.
+          This blog is where I share honest beauty and skincare finds, thoughtful comparisons, trends I love, and wishlist favorites that have stayed on my radar long after the hype fades. I am not here to tell you what you must buy, only to share what I genuinely like, trust, or hope to own someday.
+          <br />
+          <br />
+          Some links on this site are affiliate links, which means I may earn a small commission at no extra cost to you. I only share products I genuinely like, trust, or would recommend to a friend.
+          <br />
+          <br />
+          At times, I like to think of myself as a present day Bridgerton narrator, only instead of society gossip, I am sharing the inside intel on lip masks 💋, glow boosting highlighters ✨, and moisturizers that actually deliver.
+          <br />
+          <br />
+          If you love glowy skin, soft vibes, honest talk, and the occasional “I found this on Amazon at 2 a.m.” moment, you are exactly where you belong.
+          <br />
+          <br />
+          Because skincare and makeup should feel like a treat, not a chore.
+
         </p>
 
         <p className="mt-6 font-medium">
           Love,<br />
-          Saba
+          <span className="font-semibold">Saba</span>
         </p>
 
         <div className="clear-both" />
