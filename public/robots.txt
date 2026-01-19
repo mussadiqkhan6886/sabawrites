@@ -7,6 +7,11 @@ Allow: /
 Allow: /contact/
 Allow: /blogs/
 Allow: /about-me/
+Allow: /cookie-policy/
+Allow: /disclaimer/
+Allow: /privacy-policy/
+Allow: /terms-and-condition/
+
 
 # Specify the sitemap
 Sitemap: https://sabawrites.vercel.app/sitemap.xml

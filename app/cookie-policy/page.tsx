@@ -1,56 +1,79 @@
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
-const page = () => {
+const Page = () => {
   return (
-    <div>
-      <h1>Cookies</h1>
-      <p>The below Cookies Policy will explain how we use Cookies, and other technologies, when you visit our website.
+    <main className="max-w-6xl mx-auto text-justify py-5">
+      <h1 className="text-center text-3xl font-bold py-10">Cookies Policy</h1>
 
-What Are Cookies?
+      <section className="py-5">
+        <p>
+          This Cookies Policy explains how we use cookies and other technologies when you visit our website.
+        </p>
+      </section>
 
-Cookies are small pieces of information (text files) stored on your computer that enables a website to give you better service and have an improved experience while you are browsing the web.
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">What Are Cookies?</h2>
+        <p>
+          Cookies are small pieces of information (text files) stored on your computer that enable a website to give you better service and improve your browsing experience.
+        </p>
+      </section>
 
-Why We Use Cookies
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">Why We Use Cookies</h2>
+        <ul className="list-disc list-inside">
+          <li>To ensure our website functions correctly</li>
+          <li>To keep track of your preferences</li>
+          <li>To analyze how visitors utilize the website</li>
+          <li>To make enhancements to our content and site layout</li>
+          <li>To provide support for affiliate tracking and advertising</li>
+        </ul>
+      </section>
 
-We use cookies for the following reasons: 
-1.	To ensure our website functions correctly
-2.	To keep track of your preferences
-3.	To analyze how visitors utilize the website
-4.	To make enhancements to our content and site layout
-5.	To provide support for affiliate tracking and advertising.
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">Types of Cookies You May Experience</h2>
+        <h3 className="font-semibold py-1">Essential Cookies</h3>
+        <p>Needed for basic website functionality.</p>
 
-Types of Cookies You May Experience
+        <h3 className="font-semibold py-1">Analytics Cookies</h3>
+        <p>Help us analyze which pages are most frequently visited and how visitors navigate our website.</p>
 
-Essential Cookies 
-These cookies are needed for basic website functionality. 
+        <h3 className="font-semibold py-1">Functional Cookies</h3>
+        <p>Allow us to deliver individualized experiences based on your profile.</p>
 
-Analytics Cookies 
-These cookies assist us with data analysis that reveals which pages are most frequently visited and how visitors navigate our website.
+        <h3 className="font-semibold py-1">Advertising and Affiliate Cookies</h3>
+        <p>Allow advertising networks and affiliate partners to track referrals and deliver personalized ads.</p>
+      </section>
 
-Functional Cookies 
-These cookies allow us to deliver individual experiences based on your profile. 
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">Third-Party Cookies</h2>
+        <p>
+          Some cookies may come from trusted third parties like advertising networks, affiliate partners, and analytics providers. These cookies follow the privacy policies of the respective third parties.
+        </p>
+      </section>
 
-Advertising and Affiliate Cookies 
-These cookies allow advertising networks and affiliate partners to track referrals so they can deliver ads specific to you.
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">Managing Your Cookies</h2>
+        <p>
+          You can manage or disable cookies via your browser settings. You may also delete cookies already saved on your computer. Disabling cookies may impact how certain areas of our website function.
+        </p>
+      </section>
 
-Third-Party Cookies
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">Policy Updates</h2>
+        <p>
+          This policy may be updated occasionally as technology and regulations evolve.
+        </p>
+      </section>
 
-Some cookies may come from trusted third parties like advertising networks, affiliate partners, and analytics providers. These cookies will all have the privacy policy(s) of these third parties.
+      <section className="py-5">
+        <h2 className="text-xl font-semibold py-2">Contact</h2>
+        <p>
+          For any questions regarding our Cookies Policy, contact us at <Link href="mailto:info@sabawrites.com" className="text-blue-600 underline">info@sabawrites.com</Link>.
+        </p>
+      </section>
+    </main>
+  );
+};
 
-Managing Your Cookies
-
-You have the option to manage or disable your cookies via your browser settings. You may also delete cookies already saved on your computer. Disabling cookies may impact how certain areas of our website will function.
-
-Policy Updates
-
-This policy may be updated occasionally as technology and regulations evolve.
-
-
-Contact: info@sabawrites.com
-
-</p>
-    </div>
-  )
-}
-
-export default page
+export default Page;

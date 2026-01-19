@@ -21,6 +21,10 @@ export async function GET() {
       '/about-me',
       '/contact',
       '/blogs',
+      '/terms-and-condition',
+      '/privacy-policy',
+      '/disclaimer',
+      '/cookie-policy'
     ];
 
     const urls: SitemapUrl[] = [];
