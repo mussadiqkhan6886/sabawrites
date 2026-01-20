@@ -1,5 +1,32 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "Cookie Policy",
+  description:
+    "Cookie Policy of Saba writes, learn about Cookie Policy of saba writes Blogs.",
+  openGraph: {
+    title: "Cookie Policy | Saba Writes",
+    description:
+      "Cookie Policy of Saba writes, learn about Cookie Policy of saba writes Blogs.",
+    type: "website",
+    images: [
+      {
+        url: "/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "cookie policy image open graph",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cookie Policy | Saba Writes",
+    description:
+      "Cookie Policy of Saba writes, learn about Cookie Policy of saba writes Blogs.",
+  },
+};
 
 const Page = () => {
   return (

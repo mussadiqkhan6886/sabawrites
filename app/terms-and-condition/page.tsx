@@ -1,6 +1,32 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import React from 'react';
 
+export const metadata: Metadata = {
+  title: "Terms and Condition",
+  description:
+    "Terms and Condition of Saba writes, learn about Terms and Condition of saba writes Blogs.",
+  openGraph: {
+    title: "Terms and Condition | Saba Writes",
+    description:
+      "Terms and Condition of Saba writes, learn about Terms and Condition of saba writes Blogs.",
+    type: "website",
+    images: [
+      {
+        url: "/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "Terms and Condition image open graph",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms and Condition | Saba Writes",
+    description:
+      "Terms and Condition of Saba writes, learn about Terms and Condition of saba writes Blogs.",
+  },
+};
 
 const Page = () => {
   return (

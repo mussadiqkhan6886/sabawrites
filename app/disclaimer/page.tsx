@@ -1,4 +1,31 @@
+import { Metadata } from 'next';
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: "Disclaimer",
+  description:
+    "Disclaimer of Saba writes, learn about Disclaimer of saba writes Blogs.",
+  openGraph: {
+    title: "Disclaimer | Saba Writes",
+    description:
+      "Disclaimer of Saba writes, learn about Disclaimer of saba writes Blogs.",
+    type: "website",
+    images: [
+      {
+        url: "/favicon.ico",
+        width: 1200,
+        height: 630,
+        alt: "Disclaimer image open graph",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Disclaimer | Saba Writes",
+    description:
+      "Disclaimer of Saba writes, learn about Disclaimer of saba writes Blogs.",
+  },
+};
 
 const Page = () => {
   return (
