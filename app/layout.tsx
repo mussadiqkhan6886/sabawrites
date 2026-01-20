@@ -6,7 +6,7 @@ import Footer from "@/components/UserComp/Footer";
 
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://sabawrites.vercel.app"),
+  metadataBase: new URL("https://www.sabawrites.com/"),
 
   title: {
     default: "Saba Writes | Fashion, Beauty & Lifestyle Blog",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Saba",
-      url: "https://sabawrites.vercel.app/about",
+      url: "https://www.sabawrites.com/about",
     },
   ],
 
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   category: "Fashion & Lifestyle",
 
   alternates: {
-    canonical: "https://sabawrites.vercel.app",
+    canonical: "https://www.sabawrites.com/",
   },
 
   robots: {
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Saba Writes | Fashion, Beauty & Lifestyle",
     description:
       "Explore fashion trends, makeup tips, skincare routines and lifestyle stories curated by Saba.",
-    url: "https://sabawrites.vercel.app",
+    url: "https://www.sabawrites.com/",
     siteName: "Saba Writes",
     images: [
       {
@@ -91,8 +91,6 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.png",
   },
-
-  // manifest: "/site.webmanifest",
 
   // verification: {
   //   google: "GOOGLE_SEARCH_CONSOLE_CODE",
