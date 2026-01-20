@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 
+
 const Page = () => {
   return (
     <main className="max-w-6xl mx-auto text-justify py-5">

@@ -31,7 +31,7 @@ export async function GET() {
 
     staticPages.forEach(page => {
       urls.push({
-        loc: `https://sabawrites.vercel.app${page}`,
+        loc: `https://www.sabawrites.com${page}`,
         changefreq: "weekly",
         priority: 0.7,
       });
@@ -39,7 +39,7 @@ export async function GET() {
 
     blogs.forEach(item => {
       urls.push({
-        loc: `https://sabawrites.vercel.app/blogs/${item.slug}`,
+        loc: `https://www.sabawrites.com/blogs/${item.slug}`,
         changefreq: "weekly",
         priority: 0.9,
       });

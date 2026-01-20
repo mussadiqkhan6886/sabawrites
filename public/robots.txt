@@ -14,4 +14,4 @@ Allow: /terms-and-condition/
 
 
 # Specify the sitemap
-Sitemap: https://sabawrites.vercel.app/sitemap.xml
+Sitemap: https://www.sabawrites.com/sitemap.xml

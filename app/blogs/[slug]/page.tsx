@@ -39,7 +39,7 @@ export async function generateMetadata(
       title: `${formattedSlug} | Saba Writes`,
       description: blog.excerpt || `Explore ${formattedSlug} blog curated by Saba.`,
       type: "article",
-      url: `https://sabawrites.vercel.app/blogs/${slug}`,
+      url: `https://www.sabawrites.com/blogs/${slug}`,
       images: [
         {
           url: imageUrl,
