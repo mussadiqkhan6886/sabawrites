@@ -92,9 +92,9 @@ export const metadata: Metadata = {
     apple: "/favicon.png",
   },
 
-  // verification: {
-  //   google: "GOOGLE_SEARCH_CONSOLE_CODE",
-  // },
+  verification: {
+    google: "HtLDiAeBQliw2DE-t8tEFltkZ8YMs25c_insVFGKj2o",
+  },
 };
 
 
