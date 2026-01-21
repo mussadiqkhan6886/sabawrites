@@ -14,8 +14,6 @@ export const POST = async (req: NextRequest) => {
       return NextResponse.json({ message: "User does not exist" }, { status: 400 })
     }
 
-
-
     const validPassword = await bcryptjs.compare(password, findUser.password)
     if (!validPassword) {
       return NextResponse.json({ message: "Invalid password" }, { status: 400 })
