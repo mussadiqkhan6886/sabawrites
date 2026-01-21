@@ -14,7 +14,7 @@ const Header = () => {
     const [showNavigation, setShowNavigation] = useState(false)
     const pathname = usePathname()
 
-    if(pathname.includes("/admin-dashboard")){
+    if(pathname.includes("/admin-dashboard") && !pathname.endsWith("/login")){
       return <aside className="bg-medium w-full md:fixed left-0 top-0 h-full px-5 md:w-45 z-50">
         <nav className='flex md:flex-col gap-10 sm:gap-20 md:pt-20 justify-center md:justify-start h-full py-4'>
           <Link className="flex gap-3 items-center" href={"/admin-dashboard/blogs"}><FaFile /> <span>Blogs</span></Link>
