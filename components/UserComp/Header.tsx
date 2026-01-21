@@ -2,24 +2,32 @@
 
 import Link from 'next/link'
 import React, { useState } from 'react'
-import {FiMenu} from "react-icons/fi"
+import {FiLogOut, FiMenu} from "react-icons/fi"
 import Navigation from './Navigation';
 import { AnimatePresence } from 'framer-motion';
 import { playfair } from '@/lib/fonts/font';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FaPlusCircle, FaFile, FaHome } from 'react-icons/fa';
 
 const Header = () => {
 
     const [showNavigation, setShowNavigation] = useState(false)
     const pathname = usePathname()
+    const router = useRouter()
+
+    const logout = async () => {
+      await fetch("/api/logout")
+      router.push("/admin-dashboard/login")
+
+    }
 
     if(pathname.includes("/admin-dashboard") && !pathname.endsWith("/login")){
       return <aside className="bg-medium w-full md:fixed left-0 top-0 h-full px-5 md:w-45 z-50">
         <nav className='flex md:flex-col gap-10 sm:gap-20 md:pt-20 justify-center md:justify-start h-full py-4'>
-          <Link className="flex gap-3 items-center" href={"/admin-dashboard/blogs"}><FaFile /> <span>Blogs</span></Link>
-          <Link className="flex gap-3 items-center" href={"/admin-dashboard"}><FaPlusCircle /> <span>Add Blog</span></Link>
-          <Link className="flex gap-3 items-center" href={"/"}><FaHome /> <span>Go Home</span></Link>
+          <Link className="flex gap-3 items-center cursor-pointer" href={"/admin-dashboard/blogs"}><FaFile /> <span>Blogs</span></Link>
+          <Link className="flex gap-3 items-center cursor-pointer" href={"/admin-dashboard"}><FaPlusCircle /> <span>Add Blog</span></Link>
+          <Link className="flex gap-3 items-center cursor-pointer" href={"/"}><FaHome /> <span>Go Home</span></Link>
+          <button onClick={logout} className="flex gap-3 items-center cursor-pointer" ><FiLogOut /> <span>Log Out</span></button>
         </nav>
       </aside>
     }
